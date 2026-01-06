@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Master of Music | Industry Consulting & Studio Design</title>
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-red: #8b0000;
+            --accent-red-bright: #b30000;
+            --accent-blue: #00bcd4; /* Electric Blue */
+            --silver: #c0c0c0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--accent-red);
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .highlight { color: var(--accent-red); }
+        .subtle-blue { color: var(--accent-blue); }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: rgba(10, 10, 10, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--silver);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+            text-shadow: 0 0 8px rgba(0, 188, 212, 0.4);
+        }
+
+        /* --- HERO SECTION --- */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 0 1rem;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: var(--silver);
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            background-color: var(--accent-red);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-red-bright);
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.6);
+        }
+
+        /* --- SECTIONS GENERAL --- */
+        section {
+            padding: 5rem 5%;
+        }
+
+        /* --- ABOUT --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--silver);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .credentials-box {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-left: 4px solid var(--accent-blue);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .credentials-box li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .credentials-box span {
+            color: var(--accent-blue);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* --- SERVICES --- */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border: 1px solid #222;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: var(--silver);
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul li {
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .service-card ul li::before {
+            content: "•";
+            color: var(--accent-red);
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- STUDIO BUILD --- */
+        .studio-highlight {
+            background-color: #0f0f0f;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            text-align: center;
+        }
+
+        .studio-highlight p {
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: var(--text-muted);
+        }
+
+        /* --- CONTACT --- */
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--bg-card);
+            padding: 3rem;
+            border: 1px solid #333;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .insta-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.2s;
+        }
+
+        .insta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(193, 53, 132, 0.5);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: black;
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* --- MOBILE --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* Simplified for single file */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">The Master of Music</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#studios">Studio Design</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Navigate the Industry<br><span class="highlight">With Confidence</span></h1>
+        <p>Strategic Consulting for Independent Artists & Labels | Professional Studio Design & Integration</p>
+        <a href="#contact" class="btn">Book a Consultation</a>
+    </header>
+
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>The Experience</h2>
+                <h3>25 Years in Music. 20 Years in Business.</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                    Navigating the modern music industry requires more than just talent; it requires strategy, infrastructure, and financial literacy. Whether you are an independent artist trying to understand royalties or a producer looking to build a state-of-the-art facility, experience matters.
+                </p>
+                <p style="color: var(--text-muted);">
+                    As the owner of <strong>Haven Recording</strong> (listed Top 32 in SoCal by the LA Times), I bridge the gap between creative vision and technical execution.
+                </p>
+            </div>
+            <div class="credentials-box">
+                <ul>
+                    <li><span>//</span> USC Master’s Degree in Music Industry (Focus on Sync)</li>
+                    <li><span>//</span> Owner of Haven Recording (DTLA)</li>
+                    <li><span>//</span> Designed & Built 6 Studios (inc. T.E.N. Studios Palm Springs)</li>
+                    <li><span>//</span> 25+ Years Performing Musician</li>
+                    <li><span>//</span> Expert in Analog/Digital Integration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 style="text-align: center; display: block;">Consulting Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Business & Strategy</h3>
+                <ul>
+                    <li>Independent vs. Major Label Analysis</li>
+                    <li>Release Strategy & Scheduling</li>
+                    <li>Royalties Registration (PROs, SoundExchange)</li>
+                    <li>Contract Negotiation & Review</li>
+                    <li>Sync Licensing Consulting</li>
+                    <li>A&R and Artist Development</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Studio Architecture</h3>
+                <ul>
+                    <li>Full Studio Design & Build Consultation</li>
+                    <li>Sound Treatment & Acoustics</li>
+                    <li>Console Wiring & Patchbay Integration</li>
+                    <li>Analog to Digital Workflow Setup</li>
+                    <li>Equipment Selection & Installation</li>
+                    <li>ProTools Optimization</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Production & Events</h3>
+                <ul>
+                    <li>Live Event Planning & Management</li>
+                    <li>Live Streaming Audio Production</li>
+                    <li>Media Conversion (Tape/CD/Vinyl to Digital)</li>
+                    <li>Digital Archiving</li>
+                    <li>Session Engineering</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="studios" class="studio-highlight">
+        <h2>Studio Builds</h2>
+        <p>From the heart of Downtown LA to Palm Springs. I have designed and built six recording facilities, balancing sonic precision with creative atmosphere.</p>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
+            <div style="border: 1px solid #333; padding: 1.5rem; width: 300px;">
+                <h4 style="color: var(--silver); margin-bottom: 0.5rem;">HAVEN RECORDING</h4>
+                <p style="font-size: 0.9rem; color: #888;">Los Angeles, CA</p>
+            </div>
+            <div style="border: 1px solid #333; padding: 1.5rem; width: 300px;">
+                <h4 style="color: var(--silver); margin-bottom: 0.5rem;">T.E.N. STUDIOS</h4>
+                <p style="font-size: 0.9rem; color: #888;">Palm Springs, CA</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 style="text-align: center; display: block;">Get in Touch</h2>
+        <div class="contact-container">
+            <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 1.2rem;">
+                Ready to professionalize your career or build your dream studio?
+            </p>
+            <p style="color: white; margin-bottom: 2rem;">
+                Connect with me directly on Instagram for booking and inquiries.
+            </p>
+            
+            <a href="https://instagram.com/MasterofMusicIndustry" target="_blank" class="insta-btn">
+                Instagram @MasterofMusicIndustry
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 The Master of Music. All Rights Reserved.</p>
+        <p style="margin-top: 0.5rem; color: #444;">Los Angeles, CA</p>
+    </footer>
+
+</body>
+</html>
