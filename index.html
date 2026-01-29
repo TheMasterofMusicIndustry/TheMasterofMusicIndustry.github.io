@@ -242,7 +242,7 @@
             justify-content: center;   /* Center Horizontal */
             align-items: center;       /* Center Vertical */
             margin-top: 1rem;
-            padding: 1rem 1rem;        /* Reduced side padding for long email */
+            padding: 1rem 1rem;        
             width: 100%;
             max-width: 400px;
             margin-left: auto;
@@ -254,13 +254,15 @@
             transition: transform 0.2s, box-shadow 0.3s;
             text-decoration: none;
             color: white;
+            text-align: center;
+            word-break: break-all;     /* Ensures long emails wrap if absolutely necessary */
         }
 
         .contact-btn:hover {
             transform: scale(1.03);
         }
 
-        /* Email Button - Using Electric Blue to match Credentials Border */
+        /* Email Button - Electric Blue */
         .email-btn {
             background: linear-gradient(45deg, #00bcd4, #008ba3);
             box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
@@ -295,9 +297,8 @@
             .about-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; } 
             
-            /* Extra tweak for really small screens to prevent email cut-off */
             .email-btn {
-                font-size: 0.9rem;
+                font-size: 0.85rem; /* Slight adjust for mobile fit */
             }
         }
     </style>
@@ -409,8 +410,8 @@
                 Connect with me directly via Email or Instagram.
             </p>
             
-            <a href="mailto:garrett@themasterofmusic.com" class="contact-btn email-btn">
-                garrett@themasterofmusic.com
+            <a href="mailto:garrett@masterofmusicindustry.com" class="contact-btn email-btn">
+                garrett@masterofmusicindustry.com
             </a>
 
             <a href="https://instagram.com/MasterofMusicIndustry" target="_blank" class="contact-btn insta-btn">
