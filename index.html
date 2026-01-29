@@ -223,6 +223,22 @@
             color: var(--text-muted);
         }
 
+        /* New Card Style for the Links */
+        .studio-card {
+            border: 1px solid #333;
+            padding: 1.5rem;
+            width: 300px;
+            display: block; /* Makes anchor tag behave like a box */
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .studio-card:hover {
+            border-color: var(--accent-blue);
+            background-color: #1a1a1a;
+            transform: translateY(-3px);
+        }
+
         /* --- CONTACT --- */
         .contact-container {
             max-width: 600px;
@@ -234,35 +250,31 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
-        /* --- UPDATED BUTTON STYLES --- */
-        
-        /* Shared Button Base */
+        /* --- BUTTON STYLES --- */
         .contact-btn {
-            display: flex;             /* FLEXBOX FOR CENTERING */
-            justify-content: center;   /* Center Horizontal */
-            align-items: center;       /* Center Vertical */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-top: 1rem;
             padding: 1rem 1rem;        
             width: 100%;
             max-width: 400px;
             margin-left: auto;
             margin-right: auto;
-            
-            font-size: 1rem;           /* Slightly smaller font to fit email */
+            font-size: 1rem;
             font-weight: bold;
             border-radius: 50px;
             transition: transform 0.2s, box-shadow 0.3s;
             text-decoration: none;
             color: white;
             text-align: center;
-            word-break: break-all;     /* Ensures long emails wrap if absolutely necessary */
+            word-break: break-all;
         }
 
         .contact-btn:hover {
             transform: scale(1.03);
         }
 
-        /* Email Button - Electric Blue */
         .email-btn {
             background: linear-gradient(45deg, #00bcd4, #008ba3);
             box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
@@ -272,7 +284,6 @@
              box-shadow: 0 6px 20px rgba(0, 188, 212, 0.5);
         }
 
-        /* Instagram Button - Gradient */
         .insta-btn {
             background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
             box-shadow: 0 4px 15px rgba(193, 53, 132, 0.3);
@@ -298,7 +309,7 @@
             .nav-links { display: none; } 
             
             .email-btn {
-                font-size: 0.85rem; /* Slight adjust for mobile fit */
+                font-size: 0.85rem; 
             }
         }
     </style>
@@ -388,15 +399,19 @@
     <section id="studios" class="studio-highlight">
         <h2>Studio Builds</h2>
         <p>From the heart of Texas to Downtown LA & Palm Springs. I have designed and built six recording facilities, balancing sonic precision with creative atmosphere.</p>
+        
         <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
-            <div style="border: 1px solid #333; padding: 1.5rem; width: 300px;">
+            
+            <a href="https://themasterofmusic.com/Havenrecording/" target="_blank" class="studio-card">
                 <h4 style="color: var(--silver); margin-bottom: 0.5rem;">HAVEN RECORDING</h4>
                 <p style="font-size: 0.9rem; color: #888;">Los Angeles, CA</p>
-            </div>
-            <div style="border: 1px solid #333; padding: 1.5rem; width: 300px;">
-                <h4 style="color: var(--silver); margin-bottom: 0.5rem;">T.E.N. STUDIOS</h4>
+            </a>
+
+            <a href="https://venueten.com/recording-studio/" target="_blank" class="studio-card">
+                <h4 style="color: var(--silver); margin-bottom: 0.5rem;">STUDIO TEN</h4>
                 <p style="font-size: 0.9rem; color: #888;">Palm Springs, CA</p>
-            </div>
+            </a>
+
         </div>
     </section>
 
