@@ -234,16 +234,41 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
-        .insta-btn {
+        /* Email Button Style */
+        .email-btn {
             display: inline-block;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             padding: 1.2rem 2.5rem;
-            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            background-color: var(--accent-red);
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             border-radius: 50px;
             transition: transform 0.2s;
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid transparent;
+        }
+
+        .email-btn:hover {
+            transform: scale(1.05);
+            background-color: var(--accent-red-bright);
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.4);
+        }
+
+        /* Instagram Button Style */
+        .insta-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 1.2rem 2.5rem;
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.2s;
+            width: 100%;
+            max-width: 400px;
         }
 
         .insta-btn:hover {
@@ -369,12 +394,16 @@
         <h2 style="text-align: center; display: block;">Get in Touch</h2>
         <div class="contact-container">
             <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 1.2rem;">
-                Ready to take your music career to. the next level or build your dream studio?
+                Ready to take your music career to the next level or build your dream studio?
             </p>
             <p style="color: white; margin-bottom: 2rem;">
-                Connect with me directly on Instagram for booking and inquiries.
+                Connect with me directly via Email or Instagram.
             </p>
             
+            <a href="mailto:garrett@themasterofmusic.com" class="email-btn">
+                garrett@themasterofmusic.com
+            </a>
+
             <a href="https://instagram.com/MasterofMusicIndustry" target="_blank" class="insta-btn">
                 Instagram @MasterofMusicIndustry
             </a>
@@ -382,7 +411,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 The Master of Music. All Rights Reserved.</p>
+        <p>&copy; 2026 The Master of Music. All Rights Reserved.</p>
         <p style="margin-top: 0.5rem; color: #444;">Los Angeles, CA</p>
     </footer>
 
