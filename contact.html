@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Haven Recording</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="equipment.html">Equipment</a>
+        <a href="rates.html">Rates</a>
+        <a href="clients.html">Clients</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <header class="hero" style="height: 40vh; min-height: 250px; background-image: url('hero-desk.jpg');">
+        <div class="hero-content">
+            <h1>Get In Touch</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="grid-2">
+            <div>
+                <h2 class="section-title">Book Your Session</h2>
+                <p>Ready to start your project? Contact us to discuss rates, availability, or to schedule a tour of the studio.</p>
+                
+                <div class="content-card" style="margin-top: 2rem;">
+                    <p><strong>Address:</strong><br> 1340 E 6th St, Los Angeles, CA, 90021</p>
+                    <p><strong>Phone:</strong><br> 213-375-8576</p>
+                    
+                    <p style="font-style: italic; font-size: 0.9rem; margin-top: 1.5rem; margin-bottom: 1.5rem;">Available by appointment only.</p>
+
+                    <hr style="border: 0; border-top: 1px solid #444; margin-bottom: 1.5rem;">
+                    
+                    <p style="margin-bottom: 0.5rem; font-weight: bold; color: var(--primary-color);">Connect directly:</p>
+                    
+                    <a href="mailto:garrett@themasterofmusic.com" class="btn" style="width: 100%; text-transform: none; text-align: center; margin-bottom: 1rem; display: block; box-sizing: border-box;">garrett@themasterofmusic.com</a>
+                    
+                    <a href="https://www.instagram.com/havenrecording/" target="_blank" class="btn" style="width: 100%; text-align: center; display: block; box-sizing: border-box; background-color: #222; border: 1px solid #c41e3a;">Follow on Instagram</a>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3 class="section-title">Send a Message</h3>
+                <form action="mailto:garrett@themasterofmusic.com" method="post" enctype="text/plain">
+                    <label>Name</label>
+                    <input type="text" name="name" required>
+                    
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                    
+                    <label>Subject</label>
+                    <input type="text" name="subject">
+                    
+                    <label>Message</label>
+                    <textarea name="message" rows="5" required></textarea>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Haven Recording © 2024. Located in the Los Angeles Arts District.</p>
+    </footer>
+
+</body>
+</html>
