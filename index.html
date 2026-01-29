@@ -234,46 +234,50 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
-        /* Email Button Style */
+        /* --- UPDATED BUTTON STYLES --- */
+        
+        /* Shared Button Base */
+        .contact-btn {
+            display: flex;             /* FLEXBOX FOR CENTERING */
+            justify-content: center;   /* Center Horizontal */
+            align-items: center;       /* Center Vertical */
+            margin-top: 1rem;
+            padding: 1rem 1rem;        /* Reduced side padding for long email */
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            
+            font-size: 1rem;           /* Slightly smaller font to fit email */
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.2s, box-shadow 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.03);
+        }
+
+        /* Email Button - Using Electric Blue to match Credentials Border */
         .email-btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 1.2rem 2.5rem;
-            background-color: var(--accent-red);
-            color: white;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: transform 0.2s;
-            width: 100%;
-            max-width: 400px;
-            border: 2px solid transparent;
+            background: linear-gradient(45deg, #00bcd4, #008ba3);
+            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
         }
-
+        
         .email-btn:hover {
-            transform: scale(1.05);
-            background-color: var(--accent-red-bright);
-            box-shadow: 0 0 20px rgba(139, 0, 0, 0.4);
+             box-shadow: 0 6px 20px rgba(0, 188, 212, 0.5);
         }
 
-        /* Instagram Button Style */
+        /* Instagram Button - Gradient */
         .insta-btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 1.2rem 2.5rem;
             background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-            color: white;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: transform 0.2s;
-            width: 100%;
-            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(193, 53, 132, 0.3);
         }
 
         .insta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(193, 53, 132, 0.5);
+            box-shadow: 0 6px 20px rgba(193, 53, 132, 0.5);
         }
 
         /* --- FOOTER --- */
@@ -289,7 +293,12 @@
         @media (max-width: 768px) {
             header h1 { font-size: 2.5rem; }
             .about-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; } /* Simplified for single file */
+            .nav-links { display: none; } 
+            
+            /* Extra tweak for really small screens to prevent email cut-off */
+            .email-btn {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -400,11 +409,11 @@
                 Connect with me directly via Email or Instagram.
             </p>
             
-            <a href="mailto:garrett@themasterofmusic.com" class="email-btn">
+            <a href="mailto:garrett@themasterofmusic.com" class="contact-btn email-btn">
                 garrett@themasterofmusic.com
             </a>
 
-            <a href="https://instagram.com/MasterofMusicIndustry" target="_blank" class="insta-btn">
+            <a href="https://instagram.com/MasterofMusicIndustry" target="_blank" class="contact-btn insta-btn">
                 Instagram @MasterofMusicIndustry
             </a>
         </div>
