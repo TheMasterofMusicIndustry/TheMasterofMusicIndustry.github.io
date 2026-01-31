@@ -223,19 +223,23 @@
             color: var(--text-muted);
         }
 
+        /* STUDIO CARD STYLE (Shaded) */
         .studio-card {
+            background-color: #1a1a1a;
             border: 1px solid #333;
             padding: 1.5rem;
             width: 300px;
             display: block; 
             text-decoration: none;
             transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
         .studio-card:hover {
             border-color: var(--accent-blue);
-            background-color: #1a1a1a;
+            background-color: #222;
             transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 188, 212, 0.2);
         }
 
         /* --- CONTACT --- */
@@ -249,7 +253,7 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
-        /* --- BUTTON STYLES --- */
+        /* --- BUTTON STYLES (Unified Red) --- */
         .contact-btn {
             display: flex;
             justify-content: center;
@@ -268,28 +272,14 @@
             color: white;
             text-align: center;
             word-break: break-all;
+            background-color: var(--accent-red);
+            border: 2px solid transparent;
         }
 
         .contact-btn:hover {
             transform: scale(1.03);
-        }
-
-        .email-btn {
-            background: linear-gradient(45deg, #00bcd4, #008ba3);
-            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
-        }
-        
-        .email-btn:hover {
-             box-shadow: 0 6px 20px rgba(0, 188, 212, 0.5);
-        }
-
-        .insta-btn {
-            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-            box-shadow: 0 4px 15px rgba(193, 53, 132, 0.3);
-        }
-
-        .insta-btn:hover {
-            box-shadow: 0 6px 20px rgba(193, 53, 132, 0.5);
+            background-color: var(--accent-red-bright);
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.6);
         }
 
         /* --- FOOTER --- */
@@ -307,7 +297,7 @@
             .about-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; } 
             
-            .email-btn {
+            .contact-btn {
                 font-size: 0.85rem; 
             }
         }
@@ -327,7 +317,7 @@
 
     <header>
         <h1>Navigate the Industry<br><span class="highlight">With Confidence</span></h1>
-        <p>Strategic Consulting for Independent Artists & Labels | Professional Studio Design & Equipment Integration</p>
+        <p>Building the Infrastructure for Your Career. <br> Physical Studios & Business Strategy.</p>
         <a href="#contact" class="btn">Book a Consultation</a>
     </header>
 
@@ -337,7 +327,7 @@
                 <h2>The Experience</h2>
                 <h3>25 Years in Production. 20 Years in Business.</h3>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
-                    Navigating the modern music industry requires more than just talent; it requires strategy, infrastructure, and financial literacy. Whether you are an independent artist trying to understand royalties or a producer looking to build a state-of-the-art facility, experience matters.
+                    I don't just offer advice; I build infrastructure. Whether it is the <strong>physical infrastructure</strong> of a world-class recording studio or the <strong>business infrastructure</strong> required to monetize it (royalties, sync, strategy), I provide the blueprint for longevity.
                 </p>
                 <p style="color: var(--text-muted);">
                     As the owner of <strong>Haven Recording</strong> (listed Top 32 in SoCal by the LA Times), I bridge the gap between creative vision and technical execution.
@@ -356,7 +346,7 @@
     </section>
 
     <section id="services">
-        <h2 style="text-align: center; display: block;">Consulting Services</h2>
+        <h2 style="text-align: center; display: block;">Complete Career Infrastructure</h2>
         <div class="services-container">
             <div class="service-card">
                 <h3>Business & Strategy</h3>
@@ -397,7 +387,7 @@
 
     <section id="studios" class="studio-highlight">
         <h2>Studio Builds</h2>
-        <p>From the heart of Texas to Downtown LA & Palm Springs. I have designed and built six recording facilities, balancing sonic precision with creative atmosphere.</p>
+        <p>Proof of Competence. From the heart of Texas to Downtown LA & Palm Springs. I have designed and built six recording facilities, balancing sonic precision with creative atmosphere.</p>
         
         <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
             <a href="https://themasterofmusic.com/Havenrecording/" target="_blank" class="studio-card">
@@ -422,11 +412,11 @@
                 Connect with me directly via Email or Instagram.
             </p>
             
-            <a href="mailto:garrett@masterofmusicindustry.com" class="contact-btn email-btn">
+            <a href="mailto:garrett@masterofmusicindustry.com" class="contact-btn">
                 garrett@masterofmusicindustry.com
             </a>
 
-            <a href="https://instagram.com/MasterofMusicIndustry" target="_blank" class="contact-btn insta-btn">
+            <a href="https://instagram.com/MasterofMusicIndustry" target="_blank" class="contact-btn">
                 @MasterofMusicIndustry
             </a>
         </div>
