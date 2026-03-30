@@ -30,14 +30,14 @@ nav a, footer a, .resource-link, .insight-link, .studio-link, .contact-info-val 
     --accent: #C9A84C;
   }
 
-- { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
 
 body {
-background: var(–black);
-color: var(–white);
-font-family: ‘DM Sans’, sans-serif;
+background: var(--black);
+color: var(--white);
+font-family: 'DM Sans', sans-serif;
 font-weight: 300;
 overflow-x: hidden;
 cursor: none;
@@ -46,7 +46,7 @@ cursor: none;
 /* Custom cursor */
 .cursor {
 width: 12px; height: 12px;
-background: var(–gold);
+background: var(--gold);
 border-radius: 50%;
 position: fixed;
 top: 0; left: 0;
@@ -58,7 +58,7 @@ mix-blend-mode: difference;
 }
 .cursor-ring {
 width: 36px; height: 36px;
-border: 1px solid var(–gold);
+border: 1px solid var(--gold);
 border-radius: 50%;
 position: fixed;
 top: 0; left: 0;
@@ -71,10 +71,10 @@ opacity: 0.5;
 
 /* Noise overlay */
 body::before {
-content: ‘’;
+content: '';
 position: fixed;
 inset: 0;
-background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘noise’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23noise)’ opacity=‘0.04’/%3E%3C/svg%3E”);
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
 pointer-events: none;
 z-index: 1000;
 opacity: 0.3;
@@ -98,34 +98,34 @@ background: rgba(10,10,10,0.98);
 border-bottom: 1px solid rgba(201,168,76,0.15);
 }
 .nav-logo {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 22px;
 letter-spacing: 3px;
-color: var(–gold);
+color: var(--gold);
 text-decoration: none;
 }
-.nav-logo span { color: var(–white); }
+.nav-logo span { color: var(--white); }
 .nav-links { display: flex; gap: 36px; align-items: center; }
 .nav-links a {
-color: var(–muted) !important;
+color: var(--muted) !important;
 text-decoration: none !important;
 font-size: 11px;
 letter-spacing: 2.5px;
 text-transform: uppercase;
 transition: color 0.2s;
 }
-.nav-links a:hover { color: var(–gold) !important; }
+.nav-links a:hover { color: var(--gold) !important; }
 .nav-cta {
-background: var(–gold) !important;
-color: var(–black) !important;
+background: var(--gold) !important;
+color: var(--black) !important;
 padding: 10px 24px !important;
 font-weight: 500 !important;
 transition: background 0.2s !important;
 }
-.nav-cta:hover { background: var(–gold-light) !important; }
+.nav-cta:hover { background: var(--gold-light) !important; }
 
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: none; }
-.hamburger span { width: 24px; height: 1px; background: var(–white); transition: 0.3s; }
+.hamburger span { width: 24px; height: 1px; background: var(--white); transition: 0.3s; }
 
 /* HERO */
 #hero {
@@ -142,7 +142,7 @@ inset: 0;
 background:
 radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
 radial-gradient(ellipse 40% 80% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%),
-var(–black);
+var(--black);
 }
 .hero-line {
 position: absolute;
@@ -162,13 +162,13 @@ animation: scanline 8s ease-in-out infinite;
 font-size: 11px;
 letter-spacing: 5px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 margin-bottom: 32px;
 opacity: 0;
 animation: fadeUp 0.8s 0.2s forwards;
 }
 .hero-title {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: clamp(72px, 10vw, 160px);
 line-height: 0.9;
 letter-spacing: 2px;
@@ -177,21 +177,21 @@ opacity: 0;
 animation: fadeUp 0.8s 0.4s forwards;
 }
 .hero-title em {
-font-family: ‘DM Serif Display’, serif;
+font-family: 'DM Serif Display', serif;
 font-style: italic;
-color: var(–gold);
+color: var(--gold);
 display: block;
 }
 .hero-sub {
 font-size: 15px;
 line-height: 1.8;
-color: var(–muted);
+color: var(--muted);
 max-width: 480px;
 margin-bottom: 52px;
 opacity: 0;
 animation: fadeUp 0.8s 0.6s forwards;
 }
-.hero-sub strong { color: var(–white); font-weight: 400; }
+.hero-sub strong { color: var(--white); font-weight: 400; }
 .hero-actions {
 display: flex;
 gap: 20px;
@@ -200,10 +200,10 @@ opacity: 0;
 animation: fadeUp 0.8s 0.8s forwards;
 }
 .btn-primary {
-background: var(–gold);
-color: var(–black);
+background: var(--gold);
+color: var(--black);
 padding: 16px 40px;
-font-family: ‘DM Sans’, sans-serif;
+font-family: 'DM Sans', sans-serif;
 font-size: 11px;
 letter-spacing: 2.5px;
 text-transform: uppercase;
@@ -212,12 +212,12 @@ text-decoration: none;
 transition: background 0.2s, transform 0.2s;
 display: inline-block;
 }
-.btn-primary:hover { background: var(–gold-light); transform: translateY(-2px); }
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
 .btn-outline {
 border: 1px solid rgba(201,168,76,0.4);
-color: var(–gold);
+color: var(--gold);
 padding: 16px 40px;
-font-family: ‘DM Sans’, sans-serif;
+font-family: 'DM Sans', sans-serif;
 font-size: 11px;
 letter-spacing: 2.5px;
 text-transform: uppercase;
@@ -226,7 +226,7 @@ text-decoration: none;
 transition: border-color 0.2s, background 0.2s, transform 0.2s;
 display: inline-block;
 }
-.btn-outline:hover { border-color: var(–gold); background: rgba(201,168,76,0.07); transform: translateY(-2px); }
+.btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.07); transform: translateY(-2px); }
 
 .hero-stats {
 position: absolute;
@@ -242,9 +242,9 @@ animation: fadeIn 1s 1s forwards;
 }
 .hero-stat { text-align: right; }
 .hero-stat-num {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 52px;
-color: var(–gold);
+color: var(--gold);
 line-height: 1;
 display: block;
 }
@@ -252,7 +252,7 @@ display: block;
 font-size: 10px;
 letter-spacing: 2px;
 text-transform: uppercase;
-color: var(–muted);
+color: var(--muted);
 }
 .hero-divider {
 width: 1px;
@@ -272,7 +272,7 @@ to { opacity: 1; }
 
 /* TICKER */
 .ticker {
-background: var(–gold);
+background: var(--gold);
 overflow: hidden;
 padding: 14px 0;
 position: relative;
@@ -285,10 +285,10 @@ animation: ticker 30s linear infinite;
 white-space: nowrap;
 }
 .ticker-item {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 14px;
 letter-spacing: 3px;
-color: var(–black);
+color: var(--black);
 padding: 0 48px;
 flex-shrink: 0;
 }
@@ -308,35 +308,35 @@ section { position: relative; }
 font-size: 10px;
 letter-spacing: 4px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 margin-bottom: 20px;
 display: flex;
 align-items: center;
 gap: 16px;
 }
 .section-label::before {
-content: ‘’;
+content: '';
 width: 40px;
 height: 1px;
-background: var(–gold);
+background: var(--gold);
 display: inline-block;
 }
 
 .section-title {
-font-family: ‘DM Serif Display’, serif;
+font-family: 'DM Serif Display', serif;
 font-size: clamp(36px, 5vw, 64px);
 line-height: 1.1;
 margin-bottom: 24px;
 }
 .section-title em {
 font-style: italic;
-color: var(–gold);
+color: var(--gold);
 }
 
 /* ABOUT */
 #about {
 padding: 140px 60px;
-background: var(–dark);
+background: var(--dark);
 }
 .about-grid {
 display: grid;
@@ -359,45 +359,45 @@ display: flex;
 align-items: center;
 gap: 16px;
 font-size: 13px;
-color: var(–muted);
+color: var(--muted);
 transition: color 0.2s;
 }
-.cred-item:hover { color: var(–white); }
+.cred-item:hover { color: var(--white); }
 .cred-item::before {
-content: ‘//’;
-color: var(–gold);
-font-family: ‘Bebas Neue’, sans-serif;
+content: '//';
+color: var(--gold);
+font-family: 'Bebas Neue', sans-serif;
 font-size: 16px;
 flex-shrink: 0;
 }
 .about-right { position: relative; }
 .about-card {
-background: var(–dark2);
+background: var(--dark2);
 border: 1px solid rgba(201,168,76,0.15);
 padding: 48px;
 position: relative;
 overflow: hidden;
 }
 .about-card::before {
-content: ‘’;
+content: '';
 position: absolute;
 top: 0; left: 0; right: 0;
 height: 2px;
-background: linear-gradient(90deg, var(–gold), transparent);
+background: linear-gradient(90deg, var(--gold), transparent);
 }
 .about-card-quote {
-font-family: ‘DM Serif Display’, serif;
+font-family: 'DM Serif Display', serif;
 font-style: italic;
 font-size: 22px;
 line-height: 1.6;
-color: var(–white);
+color: var(--white);
 margin-bottom: 32px;
 }
 .about-card-attr {
 font-size: 11px;
 letter-spacing: 2px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 }
 .about-stats-row {
 display: grid;
@@ -407,14 +407,14 @@ margin-top: 48px;
 background: rgba(201,168,76,0.1);
 }
 .about-stat {
-background: var(–dark);
+background: var(--dark);
 padding: 32px;
 text-align: center;
 }
 .about-stat-num {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 48px;
-color: var(–gold);
+color: var(--gold);
 display: block;
 line-height: 1;
 margin-bottom: 8px;
@@ -423,13 +423,13 @@ margin-bottom: 8px;
 font-size: 10px;
 letter-spacing: 2px;
 text-transform: uppercase;
-color: var(–muted);
+color: var(--muted);
 }
 
 /* SERVICES */
 #services {
 padding: 140px 60px;
-background: var(–black);
+background: var(--black);
 }
 .services-header {
 max-width: 1200px;
@@ -447,20 +447,20 @@ gap: 2px;
 background: rgba(201,168,76,0.08);
 }
 .service-card {
-background: var(–dark);
+background: var(--dark);
 padding: 52px 40px;
 position: relative;
 overflow: hidden;
 transition: background 0.3s;
 cursor: none;
 }
-.service-card:hover { background: var(–dark2); }
+.service-card:hover { background: var(--dark2); }
 .service-card::after {
-content: ‘’;
+content: '';
 position: absolute;
 bottom: 0; left: 0; right: 0;
 height: 2px;
-background: var(–gold);
+background: var(--gold);
 transform: scaleX(0);
 transform-origin: left;
 transition: transform 0.4s ease;
@@ -474,21 +474,21 @@ display: block;
 .service-num {
 position: absolute;
 top: 40px; right: 40px;
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 64px;
 color: rgba(201,168,76,0.06);
 line-height: 1;
 pointer-events: none;
 }
 .service-title {
-font-family: ‘DM Serif Display’, serif;
+font-family: 'DM Serif Display', serif;
 font-size: 24px;
 margin-bottom: 16px;
 }
 .service-desc {
 font-size: 13px;
 line-height: 1.9;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 32px;
 }
 .service-list {
@@ -499,25 +499,25 @@ gap: 10px;
 }
 .service-list li {
 font-size: 12px;
-color: var(–muted);
+color: var(--muted);
 display: flex;
 align-items: center;
 gap: 10px;
 transition: color 0.2s;
 }
-.service-list li:hover { color: var(–white); }
+.service-list li:hover { color: var(--white); }
 .service-list li::before {
-content: ‘’;
+content: '';
 width: 20px;
 height: 1px;
-background: var(–gold);
+background: var(--gold);
 flex-shrink: 0;
 }
 
 /* ROI CALCULATOR */
 #calculator {
 padding: 140px 60px;
-background: var(–dark);
+background: var(--dark);
 }
 .calc-wrap {
 max-width: 900px;
@@ -536,16 +536,16 @@ display: block;
 font-size: 10px;
 letter-spacing: 2.5px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 margin-bottom: 12px;
 }
 .calc-field input, .calc-field select {
 width: 100%;
-background: var(–dark2);
+background: var(--dark2);
 border: 1px solid rgba(201,168,76,0.2);
-color: var(–white);
+color: var(--white);
 padding: 16px 20px;
-font-family: ‘DM Sans’, sans-serif;
+font-family: 'DM Sans', sans-serif;
 font-size: 15px;
 outline: none;
 transition: border-color 0.2s;
@@ -553,11 +553,11 @@ transition: border-color 0.2s;
 cursor: none;
 }
 .calc-field input:focus, .calc-field select:focus {
-border-color: var(–gold);
+border-color: var(--gold);
 }
-.calc-field select option { background: var(–dark2); }
+.calc-field select option { background: var(--dark2); }
 .calc-results {
-background: var(–dark2);
+background: var(--dark2);
 border: 1px solid rgba(201,168,76,0.2);
 padding: 40px;
 position: sticky;
@@ -567,7 +567,7 @@ top: 100px;
 font-size: 10px;
 letter-spacing: 3px;
 text-transform: uppercase;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 36px;
 padding-bottom: 20px;
 border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -579,18 +579,18 @@ align-items: flex-end;
 padding: 16px 0;
 border-bottom: 1px solid rgba(255,255,255,0.04);
 }
-.calc-result-label { font-size: 12px; color: var(–muted); }
+.calc-result-label { font-size: 12px; color: var(--muted); }
 .calc-result-val {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 28px;
-color: var(–white);
+color: var(--white);
 line-height: 1;
 }
-.calc-result-val.highlight { color: var(–gold); font-size: 36px; }
+.calc-result-val.highlight { color: var(--gold); font-size: 36px; }
 .calc-note {
 margin-top: 28px;
 font-size: 11px;
-color: var(–muted);
+color: var(--muted);
 line-height: 1.7;
 font-style: italic;
 }
@@ -599,7 +599,7 @@ font-style: italic;
 /* RESOURCES / LEAD MAGNETS */
 #resources {
 padding: 140px 60px;
-background: var(–black);
+background: var(--black);
 }
 .resources-grid {
 max-width: 1200px;
@@ -609,7 +609,7 @@ grid-template-columns: repeat(3, 1fr);
 gap: 24px;
 }
 .resource-card {
-background: var(–dark);
+background: var(--dark);
 border: 1px solid rgba(201,168,76,0.1);
 padding: 40px;
 position: relative;
@@ -624,21 +624,21 @@ transform: translateY(-4px);
 font-size: 9px;
 letter-spacing: 3px;
 text-transform: uppercase;
-color: var(–black);
-background: var(–gold);
+color: var(--black);
+background: var(--gold);
 padding: 4px 10px;
 display: inline-block;
 margin-bottom: 28px;
 }
 .resource-title {
-font-family: ‘DM Serif Display’, serif;
+font-family: 'DM Serif Display', serif;
 font-size: 20px;
 line-height: 1.3;
 margin-bottom: 16px;
 }
 .resource-desc {
 font-size: 12px;
-color: var(–muted);
+color: var(--muted);
 line-height: 1.8;
 margin-bottom: 32px;
 }
@@ -646,7 +646,7 @@ margin-bottom: 32px;
 font-size: 11px;
 letter-spacing: 2px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 text-decoration: none;
 display: flex;
 align-items: center;
@@ -654,7 +654,7 @@ gap: 8px;
 transition: gap 0.2s;
 }
 .resource-link:hover { gap: 16px; }
-.resource-link::after { content: ‘→’; }
+.resource-link::after { content: '→'; }
 
 /* MODAL */
 .modal-overlay {
@@ -669,7 +669,7 @@ backdrop-filter: blur(4px);
 }
 .modal-overlay.active { display: flex; }
 .modal {
-background: var(–dark2);
+background: var(--dark2);
 border: 1px solid rgba(201,168,76,0.3);
 padding: 60px;
 max-width: 480px;
@@ -677,31 +677,31 @@ width: 90%;
 position: relative;
 }
 .modal::before {
-content: ‘’;
+content: '';
 position: absolute;
 top: 0; left: 0; right: 0;
 height: 2px;
-background: linear-gradient(90deg, var(–gold), var(–gold-dim));
+background: linear-gradient(90deg, var(--gold), var(--gold-dim));
 }
 .modal-close {
 position: absolute;
 top: 20px; right: 24px;
 background: none;
 border: none;
-color: var(–muted);
+color: var(--muted);
 font-size: 20px;
 cursor: none;
 transition: color 0.2s;
 }
-.modal-close:hover { color: var(–white); }
+.modal-close:hover { color: var(--white); }
 .modal-title {
-font-family: ‘DM Serif Display’, serif;
+font-family: 'DM Serif Display', serif;
 font-size: 28px;
 margin-bottom: 8px;
 }
 .modal-sub {
 font-size: 13px;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 36px;
 line-height: 1.7;
 }
@@ -713,30 +713,30 @@ display: block;
 font-size: 9px;
 letter-spacing: 2px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 margin-bottom: 8px;
 }
 .modal-field input {
 width: 100%;
-background: var(–dark3);
+background: var(--dark3);
 border: 1px solid rgba(201,168,76,0.2);
-color: var(–white);
+color: var(--white);
 padding: 14px 18px;
-font-family: ‘DM Sans’, sans-serif;
+font-family: 'DM Sans', sans-serif;
 font-size: 14px;
 outline: none;
 transition: border-color 0.2s;
 cursor: none;
 }
-.modal-field input:focus { border-color: var(–gold); }
+.modal-field input:focus { border-color: var(--gold); }
 .modal-submit {
 width: 100%;
 margin-top: 8px;
-background: var(–gold);
-color: var(–black);
+background: var(--gold);
+color: var(--black);
 border: none;
 padding: 16px;
-font-family: ‘DM Sans’, sans-serif;
+font-family: 'DM Sans', sans-serif;
 font-size: 11px;
 letter-spacing: 2.5px;
 text-transform: uppercase;
@@ -744,13 +744,13 @@ font-weight: 500;
 cursor: none;
 transition: background 0.2s;
 }
-.modal-submit:hover { background: var(–gold-light); }
+.modal-submit:hover { background: var(--gold-light); }
 .modal-success { display: none; text-align: center; }
 .modal-success .check {
 width: 60px; height: 60px;
 border-radius: 50%;
 background: rgba(201,168,76,0.15);
-border: 2px solid var(–gold);
+border: 2px solid var(--gold);
 display: flex;
 align-items: center;
 justify-content: center;
@@ -758,16 +758,16 @@ margin: 0 auto 24px;
 font-size: 24px;
 }
 .modal-success h3 {
-font-family: ‘DM Serif Display’, serif;
+font-family: 'DM Serif Display', serif;
 font-size: 24px;
 margin-bottom: 12px;
 }
-.modal-success p { font-size: 13px; color: var(–muted); line-height: 1.7; }
+.modal-success p { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
 /* GLOSSARY */
 #glossary {
 padding: 140px 60px;
-background: var(–dark);
+background: var(--dark);
 }
 .glossary-wrap { max-width: 1200px; margin: 0 auto; }
 .glossary-search-wrap {
@@ -777,12 +777,12 @@ max-width: 500px;
 }
 .glossary-search {
 width: 100%;
-background: var(–dark2);
+background: var(--dark2);
 border: 1px solid rgba(201,168,76,0.2);
-border-bottom-color: var(–gold);
-color: var(–white);
+border-bottom-color: var(--gold);
+color: var(--white);
 padding: 16px 20px 16px 52px;
-font-family: ‘DM Sans’, sans-serif;
+font-family: 'DM Sans', sans-serif;
 font-size: 15px;
 outline: none;
 cursor: none;
@@ -792,7 +792,7 @@ position: absolute;
 left: 18px;
 top: 50%;
 transform: translateY(-50%);
-color: var(–gold);
+color: var(--gold);
 font-size: 16px;
 }
 .glossary-filter {
@@ -805,8 +805,8 @@ margin-bottom: 40px;
 padding: 8px 20px;
 border: 1px solid rgba(201,168,76,0.2);
 background: none;
-color: var(–muted);
-font-family: ‘DM Sans’, sans-serif;
+color: var(--muted);
+font-family: 'DM Sans', sans-serif;
 font-size: 10px;
 letter-spacing: 2px;
 text-transform: uppercase;
@@ -814,9 +814,9 @@ cursor: none;
 transition: all 0.2s;
 }
 .filter-btn.active, .filter-btn:hover {
-background: var(–gold);
-color: var(–black);
-border-color: var(–gold);
+background: var(--gold);
+color: var(--black);
+border-color: var(--gold);
 }
 .glossary-grid {
 display: grid;
@@ -825,17 +825,17 @@ gap: 2px;
 background: rgba(201,168,76,0.06);
 }
 .glossary-item {
-background: var(–dark);
+background: var(--dark);
 padding: 32px;
 cursor: none;
 transition: background 0.2s;
 }
-.glossary-item:hover { background: var(–dark2); }
+.glossary-item:hover { background: var(--dark2); }
 .glossary-term {
-font-family: ‘DM Serif Display’, serif;
+font-family: 'DM Serif Display', serif;
 font-size: 18px;
 margin-bottom: 10px;
-color: var(–white);
+color: var(--white);
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -844,19 +844,19 @@ align-items: center;
 font-size: 9px;
 letter-spacing: 2px;
 text-transform: uppercase;
-color: var(–gold);
-font-family: ‘DM Sans’, sans-serif;
+color: var(--gold);
+font-family: 'DM Sans', sans-serif;
 }
 .glossary-def {
 font-size: 13px;
 line-height: 1.8;
-color: var(–muted);
+color: var(--muted);
 }
 
 /* STUDIOS */
 #studios {
 padding: 140px 60px;
-background: var(–black);
+background: var(--black);
 }
 .studios-wrap { max-width: 1200px; margin: 0 auto; }
 .studios-grid {
@@ -867,22 +867,22 @@ margin-top: 64px;
 background: rgba(201,168,76,0.06);
 }
 .studio-card {
-background: var(–dark);
+background: var(--dark);
 padding: 60px 52px;
 position: relative;
 overflow: hidden;
 transition: background 0.3s;
 }
-.studio-card:hover { background: var(–dark2); }
+.studio-card:hover { background: var(--dark2); }
 .studio-card::before {
-content: ‘’;
+content: '';
 position: absolute;
 inset: 0;
 background: radial-gradient(ellipse at top left, rgba(201,168,76,0.05), transparent 60%);
 pointer-events: none;
 }
 .studio-name {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 48px;
 letter-spacing: 4px;
 margin-bottom: 8px;
@@ -891,13 +891,13 @@ margin-bottom: 8px;
 font-size: 11px;
 letter-spacing: 3px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 margin-bottom: 28px;
 }
 .studio-desc {
 font-size: 13px;
 line-height: 1.9;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 40px;
 max-width: 380px;
 }
@@ -905,7 +905,7 @@ max-width: 380px;
 font-size: 11px;
 letter-spacing: 2px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 text-decoration: none;
 display: inline-flex;
 align-items: center;
@@ -914,12 +914,12 @@ border-bottom: 1px solid rgba(201,168,76,0.3);
 padding-bottom: 4px;
 transition: gap 0.2s, border-color 0.2s;
 }
-.studio-link:hover { gap: 16px; border-color: var(–gold); }
+.studio-link:hover { gap: 16px; border-color: var(--gold); }
 
 /* CASE STUDIES / BLOG */
 #insights {
 padding: 140px 60px;
-background: var(–dark);
+background: var(--dark);
 }
 .insights-header {
 max-width: 1200px;
@@ -937,7 +937,7 @@ gap: 2px;
 background: rgba(201,168,76,0.06);
 }
 .insight-featured {
-background: var(–dark2);
+background: var(--dark2);
 padding: 52px;
 position: relative;
 cursor: none;
@@ -950,7 +950,7 @@ flex-direction: column;
 gap: 2px;
 }
 .insight-card {
-background: var(–dark2);
+background: var(--dark2);
 padding: 36px;
 cursor: none;
 transition: background 0.2s;
@@ -961,41 +961,41 @@ flex: 1;
 font-size: 9px;
 letter-spacing: 3px;
 text-transform: uppercase;
-color: var(–black);
-background: var(–gold);
+color: var(--black);
+background: var(--gold);
 padding: 4px 10px;
 display: inline-block;
 margin-bottom: 24px;
 }
-.insight-tag.label-strategy { background: var(–gold); }
+.insight-tag.label-strategy { background: var(--gold); }
 .insight-tag.label-indie { background: #5a8fa3; }
 .insight-tag.label-studio { background: #7a6a9a; }
 .insight-title {
-font-family: ‘DM Serif Display’, serif;
+font-family: 'DM Serif Display', serif;
 font-size: 24px;
 line-height: 1.3;
 margin-bottom: 16px;
 }
 .insight-title-sm {
-font-family: ‘DM Serif Display’, serif;
+font-family: 'DM Serif Display', serif;
 font-size: 17px;
 line-height: 1.4;
 margin-bottom: 12px;
 }
 .insight-excerpt {
 font-size: 13px;
-color: var(–muted);
+color: var(--muted);
 line-height: 1.8;
 margin-bottom: 32px;
 }
 .insight-meta {
 font-size: 10px;
 letter-spacing: 1.5px;
-color: var(–muted);
+color: var(--muted);
 text-transform: uppercase;
 }
 .insight-link {
-color: var(–gold);
+color: var(--gold);
 text-decoration: none;
 font-size: 11px;
 letter-spacing: 2px;
@@ -1011,7 +1011,7 @@ transition: gap 0.2s;
 /* TESTIMONIALS */
 #testimonials {
 padding: 140px 60px;
-background: var(–black);
+background: var(--black);
 overflow: hidden;
 }
 .testimonials-wrap { max-width: 1200px; margin: 0 auto; }
@@ -1025,7 +1025,7 @@ padding-bottom: 8px;
 }
 .testimonials-slider::-webkit-scrollbar { display: none; }
 .testimonial-card {
-background: var(–dark);
+background: var(--dark);
 border: 1px solid rgba(201,168,76,0.1);
 padding: 48px;
 min-width: 380px;
@@ -1035,36 +1035,36 @@ transition: border-color 0.3s;
 }
 .testimonial-card:hover { border-color: rgba(201,168,76,0.3); }
 .testimonial-quote {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 80px;
 color: rgba(201,168,76,0.15);
 line-height: 0.8;
 margin-bottom: 16px;
 }
 .testimonial-text {
-font-family: ‘DM Serif Display’, serif;
+font-family: 'DM Serif Display', serif;
 font-style: italic;
 font-size: 17px;
 line-height: 1.7;
-color: var(–white);
+color: var(--white);
 margin-bottom: 32px;
 }
 .testimonial-author {
 font-size: 11px;
 letter-spacing: 2px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 }
 .testimonial-role {
 font-size: 11px;
-color: var(–muted);
+color: var(--muted);
 margin-top: 4px;
 }
 
 /* WEBINAR / NEWSLETTER */
 #community {
 padding: 140px 60px;
-background: var(–dark);
+background: var(--dark);
 }
 .community-grid {
 max-width: 1200px;
@@ -1076,50 +1076,50 @@ margin-top: 64px;
 background: rgba(201,168,76,0.06);
 }
 .community-card {
-background: var(–dark2);
+background: var(--dark2);
 padding: 60px 52px;
 position: relative;
 overflow: hidden;
 }
 .community-card::before {
-content: ‘’;
+content: '';
 position: absolute;
 top: 0; left: 0; right: 0;
 height: 2px;
-background: linear-gradient(90deg, var(–gold), transparent);
+background: linear-gradient(90deg, var(--gold), transparent);
 }
 .community-card-icon { font-size: 40px; margin-bottom: 32px; display: block; }
 .community-card-title {
-font-family: ‘DM Serif Display’, serif;
+font-family: 'DM Serif Display', serif;
 font-size: 28px;
 margin-bottom: 16px;
 }
 .community-card-desc {
 font-size: 13px;
 line-height: 1.9;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 40px;
 }
 .newsletter-form { display: flex; gap: 0; }
 .newsletter-input {
 flex: 1;
-background: var(–dark3);
+background: var(--dark3);
 border: 1px solid rgba(201,168,76,0.2);
 border-right: none;
-color: var(–white);
+color: var(--white);
 padding: 16px 20px;
-font-family: ‘DM Sans’, sans-serif;
+font-family: 'DM Sans', sans-serif;
 font-size: 14px;
 outline: none;
 cursor: none;
 }
-.newsletter-input:focus { border-color: var(–gold); }
+.newsletter-input:focus { border-color: var(--gold); }
 .newsletter-btn {
-background: var(–gold);
-color: var(–black);
+background: var(--gold);
+color: var(--black);
 border: none;
 padding: 16px 28px;
-font-family: ‘DM Sans’, sans-serif;
+font-family: 'DM Sans', sans-serif;
 font-size: 11px;
 letter-spacing: 2px;
 text-transform: uppercase;
@@ -1128,7 +1128,7 @@ cursor: none;
 transition: background 0.2s;
 white-space: nowrap;
 }
-.newsletter-btn:hover { background: var(–gold-light); }
+.newsletter-btn:hover { background: var(--gold-light); }
 .webinar-upcoming {
 border: 1px solid rgba(201,168,76,0.15);
 padding: 24px 28px;
@@ -1148,22 +1148,22 @@ width: 56px;
 font-size: 9px;
 letter-spacing: 2px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 }
 .webinar-day {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 40px;
 line-height: 1;
-color: var(–white);
+color: var(--white);
 }
 .webinar-info-title { font-size: 14px; margin-bottom: 4px; }
-.webinar-info-desc { font-size: 12px; color: var(–muted); }
+.webinar-info-desc { font-size: 12px; color: var(--muted); }
 .webinar-register {
 margin-left: auto;
 font-size: 9px;
 letter-spacing: 2px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 text-decoration: none;
 flex-shrink: 0;
 transition: opacity 0.2s;
@@ -1174,7 +1174,7 @@ cursor: none;
 /* PRICING */
 #pricing {
 padding: 140px 60px;
-background: var(–black);
+background: var(--black);
 }
 .pricing-wrap { max-width: 1200px; margin: 0 auto; }
 .pricing-toggle {
@@ -1188,8 +1188,8 @@ border: 1px solid rgba(201,168,76,0.2);
 padding: 12px 32px;
 background: none;
 border: none;
-color: var(–muted);
-font-family: ‘DM Sans’, sans-serif;
+color: var(--muted);
+font-family: 'DM Sans', sans-serif;
 font-size: 11px;
 letter-spacing: 2px;
 text-transform: uppercase;
@@ -1197,8 +1197,8 @@ cursor: none;
 transition: all 0.2s;
 }
 .toggle-btn.active {
-background: var(–gold);
-color: var(–black);
+background: var(--gold);
+color: var(--black);
 }
 .pricing-grid {
 display: grid;
@@ -1207,22 +1207,22 @@ gap: 2px;
 background: rgba(201,168,76,0.06);
 }
 .pricing-card {
-background: var(–dark);
+background: var(--dark);
 padding: 52px 40px;
 position: relative;
 transition: background 0.2s;
 }
 .pricing-card.featured {
-background: var(–dark2);
+background: var(--dark2);
 border: 1px solid rgba(201,168,76,0.4);
 }
 .pricing-card.featured::before {
-content: ‘MOST POPULAR’;
+content: 'MOST POPULAR';
 position: absolute;
 top: -1px; left: 50%;
 transform: translateX(-50%);
-background: var(–gold);
-color: var(–black);
+background: var(--gold);
+color: var(--black);
 font-size: 9px;
 letter-spacing: 2.5px;
 padding: 5px 16px;
@@ -1231,25 +1231,25 @@ padding: 5px 16px;
 font-size: 10px;
 letter-spacing: 3px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 margin-bottom: 16px;
 }
 .pricing-name {
-font-family: ‘DM Serif Display’, serif;
+font-family: 'DM Serif Display', serif;
 font-size: 28px;
 margin-bottom: 32px;
 }
 .pricing-price {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 64px;
-color: var(–white);
+color: var(--white);
 line-height: 1;
 margin-bottom: 8px;
 }
 .pricing-price span { font-size: 28px; vertical-align: super; }
 .pricing-cadence {
 font-size: 11px;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 40px;
 }
 .pricing-features {
@@ -1261,15 +1261,15 @@ margin-bottom: 48px;
 }
 .pricing-features li {
 font-size: 13px;
-color: var(–muted);
+color: var(--muted);
 display: flex;
 align-items: flex-start;
 gap: 12px;
 line-height: 1.5;
 }
 .pricing-features li::before {
-content: ‘✓’;
-color: var(–gold);
+content: '✓';
+color: var(--gold);
 flex-shrink: 0;
 font-size: 12px;
 }
@@ -1277,15 +1277,15 @@ font-size: 12px;
 /* CONTACT */
 #contact {
 padding: 140px 60px;
-background: var(–dark);
+background: var(--dark);
 position: relative;
 overflow: hidden;
 }
 #contact::before {
-content: ‘CONNECT’;
+content: 'CONNECT';
 position: absolute;
 bottom: -40px; right: -20px;
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 280px;
 color: rgba(201,168,76,0.03);
 line-height: 1;
@@ -1307,17 +1307,17 @@ margin-bottom: 40px;
 font-size: 10px;
 letter-spacing: 3px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 margin-bottom: 8px;
 }
 .contact-info-val {
 font-size: 15px;
-color: var(–white);
+color: var(--white);
 text-decoration: none;
 display: block;
 transition: color 0.2s;
 }
-.contact-info-val:hover { color: var(–gold); }
+.contact-info-val:hover { color: var(--gold); }
 .contact-form { display: flex; flex-direction: column; gap: 20px; }
 .contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .contact-field label {
@@ -1325,18 +1325,18 @@ display: block;
 font-size: 9px;
 letter-spacing: 2.5px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 margin-bottom: 10px;
 }
 .contact-field input,
 .contact-field select,
 .contact-field textarea {
 width: 100%;
-background: var(–dark2);
+background: var(--dark2);
 border: 1px solid rgba(201,168,76,0.15);
-color: var(–white);
+color: var(--white);
 padding: 16px 20px;
-font-family: ‘DM Sans’, sans-serif;
+font-family: 'DM Sans', sans-serif;
 font-size: 14px;
 outline: none;
 transition: border-color 0.2s;
@@ -1347,13 +1347,13 @@ cursor: none;
 .contact-field input:focus,
 .contact-field select:focus,
 .contact-field textarea:focus {
-border-color: var(–gold);
+border-color: var(--gold);
 }
-.contact-field select option { background: var(–dark2); }
+.contact-field select option { background: var(--dark2); }
 
 /* FOOTER */
 footer {
-background: var(–black);
+background: var(--black);
 border-top: 1px solid rgba(201,168,76,0.1);
 padding: 80px 60px 40px;
 }
@@ -1367,16 +1367,16 @@ padding-bottom: 60px;
 border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 .footer-brand-logo {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 28px;
 letter-spacing: 3px;
-color: var(–gold);
+color: var(--gold);
 margin-bottom: 16px;
 display: block;
 }
 .footer-brand-desc {
 font-size: 13px;
-color: var(–muted);
+color: var(--muted);
 line-height: 1.8;
 margin-bottom: 28px;
 }
@@ -1387,27 +1387,27 @@ border: 1px solid rgba(201,168,76,0.2);
 display: flex;
 align-items: center;
 justify-content: center;
-color: var(–muted);
+color: var(--muted);
 text-decoration: none;
 font-size: 13px;
 transition: border-color 0.2s, color 0.2s;
 }
-.footer-social a:hover { border-color: var(–gold); color: var(–gold); }
+.footer-social a:hover { border-color: var(--gold); color: var(--gold); }
 .footer-col-title {
 font-size: 10px;
 letter-spacing: 3px;
 text-transform: uppercase;
-color: var(–gold);
+color: var(--gold);
 margin-bottom: 28px;
 }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
 .footer-links a {
-color: var(–muted);
+color: var(--muted);
 text-decoration: none;
 font-size: 13px;
 transition: color 0.2s;
 }
-.footer-links a:hover { color: var(–white); }
+.footer-links a:hover { color: var(--white); }
 .footer-bottom {
 max-width: 1200px;
 margin: 40px auto 0;
@@ -1415,17 +1415,17 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 font-size: 11px;
-color: var(–muted);
+color: var(--muted);
 }
-.footer-bottom a { color: var(–muted); text-decoration: none; }
-.footer-bottom a:hover { color: var(–gold); }
+.footer-bottom a { color: var(--muted); text-decoration: none; }
+.footer-bottom a:hover { color: var(--gold); }
 
 /* MOBILE NAV */
 .mobile-nav {
 display: none;
 position: fixed;
 inset: 0;
-background: var(–black);
+background: var(--black);
 z-index: 450;
 flex-direction: column;
 justify-content: center;
@@ -1434,14 +1434,14 @@ gap: 32px;
 }
 .mobile-nav.open { display: flex; }
 .mobile-nav a {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 36px;
 letter-spacing: 4px;
-color: var(–white);
+color: var(--white);
 text-decoration: none;
 transition: color 0.2s;
 }
-.mobile-nav a:hover { color: var(–gold); }
+.mobile-nav a:hover { color: var(--gold); }
 
 /* SCROLL REVEAL */
 .reveal {
@@ -2215,58 +2215,58 @@ footer { padding: 60px 30px 30px; }
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 // CURSOR
-const cursor = document.getElementById(‘cursor’);
-const ring = document.getElementById(‘cursorRing’);
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener(‘mousemove’, e => {
+document.addEventListener('mousemove', e => {
 mx = e.clientX; my = e.clientY;
-cursor.style.left = mx + ‘px’;
-cursor.style.top = my + ‘px’;
+cursor.style.left = mx + 'px';
+cursor.style.top = my + 'px';
 });
 function animateRing() {
 rx += (mx - rx) * 0.12;
 ry += (my - ry) * 0.12;
-ring.style.left = rx + ‘px’;
-ring.style.top = ry + ‘px’;
+ring.style.left = rx + 'px';
+ring.style.top = ry + 'px';
 requestAnimationFrame(animateRing);
 }
 animateRing();
-document.querySelectorAll(‘a, button, input, select, textarea, .resource-card, .service-card, .glossary-item’).forEach(el => {
-el.addEventListener(‘mouseenter’, () => {
-cursor.style.width = ‘20px’;
-cursor.style.height = ‘20px’;
-ring.style.width = ‘60px’;
-ring.style.height = ‘60px’;
-ring.style.opacity = ‘0.8’;
+document.querySelectorAll('a, button, input, select, textarea, .resource-card, .service-card, .glossary-item').forEach(el => {
+el.addEventListener('mouseenter', () => {
+cursor.style.width = '20px';
+cursor.style.height = '20px';
+ring.style.width = '60px';
+ring.style.height = '60px';
+ring.style.opacity = '0.8';
 });
-el.addEventListener(‘mouseleave’, () => {
-cursor.style.width = ‘12px’;
-cursor.style.height = ‘12px’;
-ring.style.width = ‘36px’;
-ring.style.height = ‘36px’;
-ring.style.opacity = ‘0.5’;
+el.addEventListener('mouseleave', () => {
+cursor.style.width = '12px';
+cursor.style.height = '12px';
+ring.style.width = '36px';
+ring.style.height = '36px';
+ring.style.opacity = '0.5';
 });
 });
 
 // NAV SCROLL
-window.addEventListener(‘scroll’, () => {
-document.getElementById(‘navbar’).classList.toggle(‘scrolled’, window.scrollY > 60);
+window.addEventListener('scroll', () => {
+document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
 });
 
 // MOBILE NAV
 function toggleMobileNav() {
-document.getElementById(‘mobileNav’).classList.toggle(‘open’);
+document.getElementById('mobileNav').classList.toggle('open');
 }
 function closeMobileNav() {
-document.getElementById(‘mobileNav’).classList.remove(‘open’);
+document.getElementById('mobileNav').classList.remove('open');
 }
 
 // SCROLL REVEAL
-const reveals = document.querySelectorAll(’.reveal’);
+const reveals = document.querySelectorAll('.reveal');
 const ro = new IntersectionObserver(entries => {
 entries.forEach((e, i) => {
 if (e.isIntersecting) {
-setTimeout(() => e.target.classList.add(‘visible’), i * 60);
+setTimeout(() => e.target.classList.add('visible'), i * 60);
 }
 });
 }, { threshold: 0.1 });
@@ -2274,94 +2274,94 @@ reveals.forEach(r => ro.observe(r));
 
 // ROI CALCULATOR
 function fmtCurrency(n) {
-if (n >= 1000) return ‘$’ + (n/1000).toFixed(1) + ‘K’;
-return ‘$’ + Math.round(n).toLocaleString();
+if (n >= 1000) return '$' + (n/1000).toFixed(1) + 'K';
+return '$' + Math.round(n).toLocaleString();
 }
 function calcROI() {
-const streams = parseFloat(document.getElementById(‘calcStreams’).value) || 0;
-const merch = parseFloat(document.getElementById(‘calcMerch’).value) || 0;
-const live = parseFloat(document.getElementById(‘calcLive’).value) || 0;
-const noPRO = document.getElementById(‘calcPRO’).value === ‘no’;
-const noSync = document.getElementById(‘calcSync’).value === ‘no’;
-const stage = document.getElementById(‘calcStage’).value;
+const streams = parseFloat(document.getElementById('calcStreams').value) || 0;
+const merch = parseFloat(document.getElementById('calcMerch').value) || 0;
+const live = parseFloat(document.getElementById('calcLive').value) || 0;
+const noPRO = document.getElementById('calcPRO').value === 'no';
+const noSync = document.getElementById('calcSync').value === 'no';
+const stage = document.getElementById('calcStage').value;
 
 const streamRev = streams * 0.004;
 const totalMerch = merch + live;
 const royaltyGap = noPRO ? streams * 0.003 : streams * 0.0005;
 let syncPotential = 0;
 if (noSync) {
-if (stage === ‘emerging’) syncPotential = 300;
-else if (stage === ‘growing’) syncPotential = 1500;
+if (stage === 'emerging') syncPotential = 300;
+else if (stage === 'growing') syncPotential = 1500;
 else syncPotential = 5000;
 }
 const gap = royaltyGap + syncPotential;
 
-document.getElementById(‘resStreaming’).textContent = fmtCurrency(streamRev);
-document.getElementById(‘resMerch’).textContent = fmtCurrency(totalMerch);
-document.getElementById(‘resRoyalties’).textContent = fmtCurrency(royaltyGap) + ‘/mo’;
-document.getElementById(‘resSync’).textContent = fmtCurrency(syncPotential) + ‘/mo’;
-document.getElementById(‘resTotal’).textContent = fmtCurrency(gap * 12) + ‘/yr’;
+document.getElementById('resStreaming').textContent = fmtCurrency(streamRev);
+document.getElementById('resMerch').textContent = fmtCurrency(totalMerch);
+document.getElementById('resRoyalties').textContent = fmtCurrency(royaltyGap) + '/mo';
+document.getElementById('resSync').textContent = fmtCurrency(syncPotential) + '/mo';
+document.getElementById('resTotal').textContent = fmtCurrency(gap * 12) + '/yr';
 }
 
 // MODAL
 function openModal(title, sub) {
-document.getElementById(‘modalTitle’).textContent = title;
-document.getElementById(‘modalSub’).textContent = sub;
-document.getElementById(‘modalOverlay’).classList.add(‘active’);
-document.getElementById(‘modalForm’).style.display = ‘block’;
-document.getElementById(‘modalSuccess’).style.display = ‘none’;
+document.getElementById('modalTitle').textContent = title;
+document.getElementById('modalSub').textContent = sub;
+document.getElementById('modalOverlay').classList.add('active');
+document.getElementById('modalForm').style.display = 'block';
+document.getElementById('modalSuccess').style.display = 'none';
 }
 function closeModal() {
-document.getElementById(‘modalOverlay’).classList.remove(‘active’);
+document.getElementById('modalOverlay').classList.remove('active');
 }
 function submitModal() {
-const name = document.getElementById(‘modalName’).value;
-const email = document.getElementById(‘modalEmail’).value;
-if (!name || !email) { alert(‘Please fill in your name and email.’); return; }
-document.getElementById(‘modalForm’).style.display = ‘none’;
-document.getElementById(‘modalSuccess’).style.display = ‘block’;
+const name = document.getElementById('modalName').value;
+const email = document.getElementById('modalEmail').value;
+if (!name || !email) { alert('Please fill in your name and email.'); return; }
+document.getElementById('modalForm').style.display = 'none';
+document.getElementById('modalSuccess').style.display = 'block';
 }
-document.getElementById(‘modalOverlay’).addEventListener(‘click’, function(e) {
+document.getElementById('modalOverlay').addEventListener('click', function(e) {
 if (e.target === this) closeModal();
 });
 
 // GLOSSARY
 const glossaryData = [
-{ term: ‘360 Deal’, cat: ‘contracts’, def: ‘A record contract where the label takes a percentage of all revenue streams — not just recorded music, but touring, merch, endorsements, and more. Often presented as standard. It's negotiable.’ },
-{ term: ‘PRO (Performing Rights Organization)’, cat: ‘royalties’, def: ‘Organizations like ASCAP, BMI, or SESAC that collect performance royalties on behalf of songwriters and publishers. You must register your songs and join one.’ },
-{ term: ‘SoundExchange’, cat: ‘royalties’, def: ‘A non-profit that collects digital performance royalties for sound recordings — separate from the songwriter royalties collected by PROs. Covers Pandora, SiriusXM, webcasts, and more.’ },
-{ term: ‘Mechanical Royalties’, cat: ‘royalties’, def: ‘Royalties paid to songwriters when their compositions are reproduced — whether on a physical record, digital download, or as a stream. Collected by Harry Fox Agency or directly through distributors.’ },
-{ term: ‘Sync License’, cat: ‘sync’, def: ‘A license granting permission to use a piece of music in sync with visual media — TV, film, advertising, or video games. One of the most lucrative revenue streams for independent artists.’ },
-{ term: ‘Master Rights’, cat: ‘contracts’, def: ‘Ownership of the actual sound recording. Whoever owns the master controls how it's used and licensed. Artists often sign master rights away in record deals — understanding this is critical.’ },
-{ term: ‘Publishing Rights’, cat: ‘contracts’, def: ‘Rights to the underlying composition — the melody and lyrics. Separate from master rights. Publishing deals can be highly lucrative, but signing them away has long-term consequences.’ },
-{ term: ‘DSP’, cat: ‘distribution’, def: ‘Digital Service Provider — any platform that streams or sells digital music (Spotify, Apple Music, Amazon Music, Tidal, etc.). Each has different royalty structures and algorithmic mechanics.’ },
-{ term: ‘A&R’, cat: ‘labels’, def: ‘Artists & Repertoire — the department at a record label responsible for scouting, signing, and developing talent. A&R reps are the gatekeepers and advocates for artists within a label.’ },
-{ term: ‘Artist Development’, cat: ‘labels’, def: ‘The process of shaping an artist's identity, sound, image, and market positioning before or after signing. Historically done by labels — increasingly done by independent consultants.’ },
-{ term: ‘Neighboring Rights’, cat: ‘royalties’, def: ‘Performance royalties for the sound recording (not the composition) when music is broadcast. Common in Europe and Canada; often entirely uncollected by U.S. artists without representation.’ },
-{ term: ‘Distributor’, cat: ‘distribution’, def: ‘A company that gets your music onto DSPs and into stores. Independent distributors (DistroKid, TuneCore, AWAL) have democratized distribution — but they're not all equal in royalty terms.’ },
-{ term: ‘Work-for-Hire’, cat: ‘contracts’, def: ‘A contractual arrangement where all creative work belongs to the employer, not the creator. Common in session work and sync composition. Means you sign away all future royalty claims.’ },
-{ term: ‘Advance’, cat: ‘labels’, def: ‘An upfront payment from a label that must be recouped from your future royalties before you see another cent. Not free money — it's a loan against your future earnings.’ },
-{ term: ‘Recoupment’, cat: ‘labels’, def: ‘The process by which a label recoups its advance and costs from your royalty earnings before paying you. Artists can sell millions of records and never see a royalty check due to recoupment clauses.’ },
-{ term: ‘Metadata’, cat: ‘distribution’, def: ‘The data attached to your music files — ISRC codes, ISWC codes, performer credits, composer info, genre tags. Incorrect or missing metadata is one of the most common reasons royalties go uncollected.’ },
+{ term: '360 Deal', cat: 'contracts', def: "A record contract where the label takes a percentage of all revenue streams — not just recorded music, but touring, merch, endorsements, and more. Often presented as standard. It's negotiable." },
+{ term: 'PRO (Performing Rights Organization)', cat: 'royalties', def: 'Organizations like ASCAP, BMI, or SESAC that collect performance royalties on behalf of songwriters and publishers. You must register your songs and join one.' },
+{ term: 'SoundExchange', cat: 'royalties', def: 'A non-profit that collects digital performance royalties for sound recordings — separate from the songwriter royalties collected by PROs. Covers Pandora, SiriusXM, webcasts, and more.' },
+{ term: 'Mechanical Royalties', cat: 'royalties', def: 'Royalties paid to songwriters when their compositions are reproduced — whether on a physical record, digital download, or as a stream. Collected by Harry Fox Agency or directly through distributors.' },
+{ term: 'Sync License', cat: 'sync', def: 'A license granting permission to use a piece of music in sync with visual media — TV, film, advertising, or video games. One of the most lucrative revenue streams for independent artists.' },
+{ term: 'Master Rights', cat: 'contracts', def: "Ownership of the actual sound recording. Whoever owns the master controls how it's used and licensed. Artists often sign master rights away in record deals — understanding this is critical." },
+{ term: 'Publishing Rights', cat: 'contracts', def: "Rights to the underlying composition — the melody and lyrics. Separate from master rights. Publishing deals can be highly lucrative, but signing them away has long-term consequences." },
+{ term: 'DSP', cat: 'distribution', def: 'Digital Service Provider — any platform that streams or sells digital music (Spotify, Apple Music, Amazon Music, Tidal, etc.). Each has different royalty structures and algorithmic mechanics.' },
+{ term: 'A&R', cat: 'labels', def: 'Artists & Repertoire — the department at a record label responsible for scouting, signing, and developing talent. A&R reps are the gatekeepers and advocates for artists within a label.' },
+{ term: 'Artist Development', cat: 'labels', def: "The process of shaping an artist's identity, sound, image, and market positioning before or after signing. Historically done by labels — increasingly done by independent consultants." },
+{ term: 'Neighboring Rights', cat: 'royalties', def: 'Performance royalties for the sound recording (not the composition) when music is broadcast. Common in Europe and Canada; often entirely uncollected by U.S. artists without representation.' },
+{ term: 'Distributor', cat: 'distribution', def: "A company that gets your music onto DSPs and into stores. Independent distributors (DistroKid, TuneCore, AWAL) have democratized distribution — but they're not all equal in royalty terms." },
+{ term: 'Work-for-Hire', cat: 'contracts', def: 'A contractual arrangement where all creative work belongs to the employer, not the creator. Common in session work and sync composition. Means you sign away all future royalty claims.' },
+{ term: 'Advance', cat: 'labels', def: "An upfront payment from a label that must be recouped from your future royalties before you see another cent. Not free money — it's a loan against your future earnings." },
+{ term: 'Recoupment', cat: 'labels', def: 'The process by which a label recoups its advance and costs from your royalty earnings before paying you. Artists can sell millions of records and never see a royalty check due to recoupment clauses.' },
+{ term: 'Metadata', cat: 'distribution', def: 'The data attached to your music files — ISRC codes, ISWC codes, performer credits, composer info, genre tags. Incorrect or missing metadata is one of the most common reasons royalties go uncollected.' },
 ];
-let currentCat = ‘all’;
-let currentSearch = ‘’;
+let currentCat = 'all';
+let currentSearch = '';
 function renderGlossary() {
-const grid = document.getElementById(‘glossaryGrid’);
+const grid = document.getElementById('glossaryGrid');
 const filtered = glossaryData.filter(item => {
-const catMatch = currentCat === ‘all’ || item.cat === currentCat;
+const catMatch = currentCat === 'all' || item.cat === currentCat;
 const searchMatch = !currentSearch || item.term.toLowerCase().includes(currentSearch.toLowerCase()) || item.def.toLowerCase().includes(currentSearch.toLowerCase());
 return catMatch && searchMatch;
 });
 grid.innerHTML = filtered.length === 0
-? ‘<div style="padding:40px;color:var(--muted);font-size:13px;grid-column:1/-1;">No terms found for that search.</div>’
-: filtered.map(item => ` <div class="glossary-item"> <div class="glossary-term">${item.term} <span class="glossary-cat">${item.cat}</span></div> <p class="glossary-def">${item.def}</p> </div>`).join(’’);
+? '<div style="padding:40px;color:var(--muted);font-size:13px;grid-column:1/-1;">No terms found for that search.</div>'
+: filtered.map(item => ` <div class="glossary-item"> <div class="glossary-term">${item.term} <span class="glossary-cat">${item.cat}</span></div> <p class="glossary-def">${item.def}</p> </div>`).join('');
 }
 function filterGlossary(val) { currentSearch = val; renderGlossary(); }
 function filterCat(cat, btn) {
 currentCat = cat;
-document.querySelectorAll(’.filter-btn’).forEach(b => b.classList.remove(‘active’));
-btn.classList.add(‘active’);
+document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
 renderGlossary();
 }
 renderGlossary();
@@ -2369,29 +2369,33 @@ renderGlossary();
 // PRICING
 const pricingData = {
 artist: [
-{ tier: ‘Starter’, name: ‘Foundation Session’, price: ‘297’, cadence: ‘one-time’, features: [‘90-minute strategy session’, ‘PRO & royalty registration audit’, ‘Release strategy overview’, ‘Career roadmap document’, ‘Email follow-up Q&A (7 days)’] },
-{ tier: ‘Growth’, name: ‘Career Blueprint’, price: ‘897’, cadence: ‘one-time’, featured: true, features: [‘3 x 60-minute consulting sessions’, ‘Full royalty registration setup’, ‘Release strategy & scheduling’, ‘Distribution platform review’, ‘Contract review (up to 2 documents)’, ‘Sync licensing introductory strategy’, ‘30-day email support’] },
-{ tier: ‘Complete’, name: ‘Full Infrastructure’, price: ‘2,497’, cadence: ‘per quarter’, features: [‘Monthly strategy sessions (ongoing)’, ‘Full business audit & rebuild’, ‘Contract negotiation support’, ‘Sync licensing strategy & pitching’, ‘Label outreach & A&R prep’, ‘Studio workflow optimization’, ‘Priority access & direct line’] },
+{ tier: 'Starter', name: 'Foundation Session', price: '297', cadence: 'one-time', features: ['90-minute strategy session', 'PRO & royalty registration audit', 'Release strategy overview', 'Career roadmap document', 'Email follow-up Q&A (7 days)'] },
+{ tier: 'Growth', name: 'Career Blueprint', price: '897', cadence: 'one-time', featured: true, features: ['3 x 60-minute consulting sessions', 'Full royalty registration setup', 'Release strategy & scheduling', 'Distribution platform review', 'Contract review (up to 2 documents)', 'Sync licensing introductory strategy', '30-day email support'] },
+{ tier: 'Complete', name: 'Full Infrastructure', price: '2,497', cadence: 'per quarter', features: ['Monthly strategy sessions (ongoing)', 'Full business audit & rebuild', 'Contract negotiation support', 'Sync licensing strategy & pitching', 'Label outreach & A&R prep', 'Studio workflow optimization', 'Priority access & direct line'] },
 ],
 label: [
-{ tier: ‘Starter’, name: ‘Label Strategy Session’, price: ‘497’, cadence: ‘one-time’, features: [‘120-minute A&R strategy session’, ‘Roster audit & feedback’, ‘Market positioning analysis’, ‘Release strategy consultation’, ‘Follow-up summary document’] },
-{ tier: ‘Partner’, name: ‘Label Development’, price: ‘1,997’, cadence: ‘one-time’, featured: true, features: [‘4 x consulting sessions’, ‘Full A&R strategy development’, ‘Artist development frameworks’, ‘Contract structure review’, ‘Sync licensing integration’, ‘Studio infrastructure planning’, ‘60-day support access’] },
-{ tier: ‘Retained’, name: ‘Label Partner’, price: ‘4,500’, cadence: ‘per month’, features: [‘Ongoing strategic partnership’, ‘Weekly check-in calls’, ‘Full contract review & negotiation’, ‘Sync & licensing strategy execution’, ‘Studio design consultation’, ‘Staff training sessions’, ‘Direct line access, always’] },
+{ tier: 'Starter', name: 'Label Strategy Session', price: '497', cadence: 'one-time', features: ['120-minute A&R strategy session', 'Roster audit & feedback', 'Market positioning analysis', 'Release strategy consultation', 'Follow-up summary document'] },
+{ tier: 'Partner', name: 'Label Development', price: '1,997', cadence: 'one-time', featured: true, features: ['4 x consulting sessions', 'Full A&R strategy development', 'Artist development frameworks', 'Contract structure review', 'Sync licensing integration', 'Studio infrastructure planning', '60-day support access'] },
+{ tier: 'Retained', name: 'Label Partner', price: '4,500', cadence: 'per month', features: ['Ongoing strategic partnership', 'Weekly check-in calls', 'Full contract review & negotiation', 'Sync & licensing strategy execution', 'Studio design consultation', 'Staff training sessions', 'Direct line access, always'] },
 ]
 };
 function renderPricing(mode) {
-const grid = document.getElementById(‘pricingGrid’);
-grid.innerHTML = pricingData[mode].map(p => `<div class="pricing-card ${p.featured ? 'featured' : ''}"> <p class="pricing-tier">${p.tier}</p> <h3 class="pricing-name">${p.name}</h3> <div class="pricing-price"><span>$</span>${p.price}</div> <p class="pricing-cadence">${p.cadence}</p> <ul class="pricing-features"> ${p.features.map(f =>`<li>${f}</li>`).join('')} </ul> <a href="#contact" class="btn-${p.featured ? 'primary' : 'outline'}" style="display:block;text-align:center;width:100%;">Get Started →</a> </div>`).join(’’);
+const grid = document.getElementById('pricingGrid');
+grid.innerHTML = pricingData[mode].map(p => `<div class="pricing-card ${p.featured ? 'featured' : ''}"> <p class="pricing-tier">${p.tier}</p> <h3 class="pricing-name">${p.name}</h3> <div class="pricing-price"><span>$</span>${p.price}</div> <p class="pricing-cadence">${p.cadence}</p> <ul class="pricing-features"> ${p.features.map(f =>`<li>${f}</li>`).join('')} </ul> <a href="#contact" class="btn-${p.featured ? 'primary' : 'outline'}" style="display:block;text-align:center;width:100%;">Get Started →</a> </div>`).join('');
 }
 function setPricingMode(mode, btn) {
-document.querySelectorAll(’.toggle-btn’).forEach(b => b.classList.remove(‘active’));
-btn.classList.add(‘active’);
+document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
 renderPricing(mode);
 }
-renderPricing(‘artist’);
+renderPricing('artist');
 
 // NEWSLETTER
 function subscribeNewsletter() {
-const email = document.getElementById(‘newsletterEmail’).value;
-if (!email) { alert(‘Please enter your email address.’); return; }
-document.getElementById(‘newsletterEmail’).value = ‘’;
+const email = document.getElementById('newsletterEmail').value;
+if (!email) { alert('Please enter your email address.'); return; }
+document.getElementById('newsletterEmail').value = '';
+}
+</script>
+</body>
+</html>
