@@ -4,11 +4,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Master of Music | Industry Consulting & Studio Design</title>
+<title>The Master of Music Industry | Consulting & Studio Design</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<style>html,body{background:#0a0a0a!important;color:#f5f0e8!important;}</style>
+<style>html,body{background:#0a0a0a!important;color:#f5f0e8!important;}
+/* Reset any inherited stylesheet conflicts */
+a { color: inherit; text-decoration: none; }
+* { box-sizing: border-box; }
+/* Force override old style.css link colors */
+body a:not([class]) { color: var(--gold, #C9A84C); }
+nav a, footer a, .resource-link, .insight-link, .studio-link, .contact-info-val { text-decoration: none !important; }
+</style>
 <style>
   :root {
     --gold: #C9A84C;
@@ -100,14 +107,14 @@ text-decoration: none;
 .nav-logo span { color: var(–white); }
 .nav-links { display: flex; gap: 36px; align-items: center; }
 .nav-links a {
-color: var(–muted);
-text-decoration: none;
+color: var(–muted) !important;
+text-decoration: none !important;
 font-size: 11px;
 letter-spacing: 2.5px;
 text-transform: uppercase;
 transition: color 0.2s;
 }
-.nav-links a:hover { color: var(–gold); }
+.nav-links a:hover { color: var(–gold) !important; }
 .nav-cta {
 background: var(–gold) !important;
 color: var(–black) !important;
@@ -1502,7 +1509,7 @@ footer { padding: 60px 30px 30px; }
 <!-- NAV -->
 
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">Master<span>of</span>Music</a>
+  <a href="#hero" class="nav-logo">Master<span>of</span>Music Industry</a>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#services">Services</a>
@@ -1619,7 +1626,7 @@ footer { padding: 60px 30px 30px; }
     <div class="reveal">
       <div class="about-card">
         <p class="about-card-quote">"I bridge the gap between creative vision and technical execution — building careers designed to last."</p>
-        <p class="about-card-attr">— Garrett, The Master of Music</p>
+        <p class="about-card-attr">— Garrett, The Master of Music Industry</p>
       </div>
       <div class="about-stats-row">
         <div class="about-stat">
@@ -2161,7 +2168,7 @@ footer { padding: 60px 30px 30px; }
 <footer>
   <div class="footer-grid">
     <div>
-      <span class="footer-brand-logo">Master of Music</span>
+      <span class="footer-brand-logo">Master of Music Industry</span>
       <p class="footer-brand-desc">25 years in production. 20 years in business. Building the infrastructure that turns creative vision into lasting careers — for independent artists and labels alike.</p>
       <div class="footer-social">
         <a href="https://instagram.com/MasterofMusicIndustry" target="_blank" title="Instagram">IG</a>
@@ -2200,7 +2207,7 @@ footer { padding: 60px 30px 30px; }
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 The Master of Music. All Rights Reserved. Los Angeles, CA</span>
+    <span>© 2026 The Master of Music Industry. All Rights Reserved. Los Angeles, CA</span>
     <span>Built for artists who mean business.</span>
   </div>
 </footer>
