@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,1662 +6,482 @@
 <title>The Master of Music Industry | Consulting & Studio Design</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<style>html,body{background:#0a0a0a!important;color:#f5f0e8!important;}
-/* Reset any inherited stylesheet conflicts */
-a { color: inherit; text-decoration: none; }
-* { box-sizing: border-box; }
-/* Force override old style.css link colors */
-body a:not([class]) { color: var(--gold, #C9A84C); }
-nav a, footer a, .resource-link, .insight-link, .studio-link, .contact-info-val { text-decoration: none !important; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --gold: #C9A84C;
-    --gold-light: #E8C97A;
-    --gold-dim: #8a6e2f;
-    --black: #0a0a0a;
-    --dark: #111111;
-    --dark2: #1a1a1a;
-    --dark3: #222222;
-    --white: #f5f0e8;
-    --muted: #888880;
-    --accent: #C9A84C;
+    /* Brand Color Palette - Derived from the Logo */
+    --red-metallic: #8F0A1F; /* Deep metallic red */
+    --red-accent: #E0304C;   /* Brighter red for glowing effects */
+    --silver-metallic: #C0C0C0; /* Polished metallic silver/chrome */
+    --silver-dark: #666666;     /* Darker metallic silver for subtle borders */
+    --bg-base: #050505;        /* Onyx dark background with texture */
+    --bg-surface: #101010;     /* Dark charcoal for surface panels */
+    --bg-elevated: #181818;    /* Slightly lighter surface for deep elements */
+    --text-main: #FAFAFA;      /* Pure white for prominent text */
+    --text-muted: #A0A0A0;    /* Muted grey for descriptions */
+    --border-subtle: rgba(192, 192, 192, 0.1);
+    --border-accent: rgba(224, 48, 76, 0.4); /* Glowing red border accent */
   }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: var(--bg-base); color: var(--text-main); }
 
 body {
-background: var(--black);
-color: var(--white);
-font-family: 'DM Sans', sans-serif;
-font-weight: 300;
-overflow-x: hidden;
-cursor: none;
+  background: var(--bg-base);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
+
+a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
 /* Custom cursor */
 .cursor {
-width: 12px; height: 12px;
-background: var(--gold);
-border-radius: 50%;
-position: fixed;
-top: 0; left: 0;
-pointer-events: none;
-z-index: 9999;
-transform: translate(-50%, -50%);
-transition: transform 0.1s ease, width 0.2s, height 0.2s, background 0.2s;
-mix-blend-mode: difference;
+  width: 10px; height: 10px;
+  background: var(--text-main);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.2s, height 0.2s, background 0.2s;
+  mix-blend-mode: difference;
 }
 .cursor-ring {
-width: 36px; height: 36px;
-border: 1px solid var(--gold);
-border-radius: 50%;
-position: fixed;
-top: 0; left: 0;
-pointer-events: none;
-z-index: 9998;
-transform: translate(-50%, -50%);
-transition: transform 0.15s ease, width 0.3s, height 0.3s, opacity 0.3s;
-opacity: 0.5;
+  width: 40px; height: 40px;
+  border: 1px solid var(--red-accent);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, width 0.3s, height 0.3s, opacity 0.3s;
+  opacity: 0.3;
 }
 
 /* Noise overlay */
 body::before {
-content: '';
-position: fixed;
-inset: 0;
-background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-pointer-events: none;
-z-index: 1000;
-opacity: 0.3;
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.4;
 }
 
 /* NAV */
 nav {
-position: fixed;
-top: 0; left: 0; right: 0;
-z-index: 500;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 24px 60px;
-background: linear-gradient(180deg, rgba(10,10,10,0.95) 0%, transparent 100%);
-backdrop-filter: blur(2px);
-transition: background 0.3s;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 60px;
+  background: linear-gradient(180deg, rgba(5,5,5,0.9) 0%, transparent 100%);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.4s ease;
 }
 nav.scrolled {
-background: rgba(10,10,10,0.98);
-border-bottom: 1px solid rgba(201,168,76,0.15);
+  background: rgba(5,5,5,0.85);
+  border-bottom: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
 }
-.nav-logo {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 22px;
-letter-spacing: 3px;
-color: var(--gold);
-text-decoration: none;
+.nav-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.nav-logo span { color: var(--white); }
-.nav-links { display: flex; gap: 36px; align-items: center; }
+.nav-logo-img {
+  height: 48px;
+  width: auto;
+}
+.nav-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--silver-metallic);
+}
+.nav-logo-text span { color: var(--red-metallic); font-style: italic; }
+.nav-links { display: flex; gap: 40px; align-items: center; }
 .nav-links a {
-color: var(--muted) !important;
-text-decoration: none !important;
-font-size: 11px;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-transition: color 0.2s;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
-.nav-links a:hover { color: var(--gold) !important; }
+.nav-links a:hover { color: var(--silver-metallic); }
 .nav-cta {
-background: var(--gold) !important;
-color: var(--black) !important;
-padding: 10px 24px !important;
-font-weight: 500 !important;
-transition: background 0.2s !important;
+  background: linear-gradient(135deg, var(--silver-metallic) 0%, #D0D0D0 100%);
+  color: #101010 !important;
+  padding: 12px 28px;
+  border-radius: 2px;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
-.nav-cta:hover { background: var(--gold-light) !important; }
-
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: none; }
-.hamburger span { width: 24px; height: 1px; background: var(--white); transition: 0.3s; }
+.nav-cta:hover { background: var(--text-main); color: #101010 !important; }
 
 /* HERO */
 #hero {
-min-height: 100vh;
-display: flex;
-align-items: center;
-position: relative;
-overflow: hidden;
-padding: 0 60px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  padding: 0 60px;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(143, 10, 31, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(192, 192, 192, 0.05) 0%, transparent 60%),
+    var(--bg-base);
 }
-.hero-bg {
-position: absolute;
-inset: 0;
-background:
-radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
-radial-gradient(ellipse 40% 80% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%),
-var(--black);
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  max-width: 1400px;
 }
-.hero-line {
-position: absolute;
-left: 0; right: 0;
-height: 1px;
-background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
-animation: scanline 8s ease-in-out infinite;
+.hero-logo-large {
+  max-width: 600px;
+  height: auto;
+  opacity: 0;
+  animation: fadeIn 1s 0.2s forwards;
 }
-@keyframes scanline {
-0% { top: 20%; opacity: 0; }
-10% { opacity: 1; }
-90% { opacity: 1; }
-100% { top: 80%; opacity: 0; }
-}
-.hero-content { position: relative; z-index: 2; max-width: 900px; }
+.hero-text { position: relative; z-index: 2; max-width: 600px; }
 .hero-eyebrow {
-font-size: 11px;
-letter-spacing: 5px;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 32px;
-opacity: 0;
-animation: fadeUp 0.8s 0.2s forwards;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--red-accent);
+  margin-bottom: 2rem;
+  animation: fadeUp 0.8s 0.2s forwards;
+  opacity: 0;
 }
 .hero-title {
-font-family: 'Bebas Neue', sans-serif;
-font-size: clamp(72px, 10vw, 160px);
-line-height: 0.9;
-letter-spacing: 2px;
-margin-bottom: 40px;
-opacity: 0;
-animation: fadeUp 0.8s 0.4s forwards;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(60px, 9vw, 130px);
+  line-height: 0.95;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-bottom: 2rem;
+  color: var(--silver-metallic);
+  animation: fadeUp 0.8s 0.4s forwards;
+  opacity: 0;
 }
-.hero-title em {
-font-family: 'DM Serif Display', serif;
-font-style: italic;
-color: var(--gold);
-display: block;
-}
+.hero-title em { font-style: italic; color: var(--silver-metallic); font-weight: 400; }
 .hero-sub {
-font-size: 15px;
-line-height: 1.8;
-color: var(--muted);
-max-width: 480px;
-margin-bottom: 52px;
-opacity: 0;
-animation: fadeUp 0.8s 0.6s forwards;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin-bottom: 3rem;
+  animation: fadeUp 0.8s 0.6s forwards;
+  opacity: 0;
 }
-.hero-sub strong { color: var(--white); font-weight: 400; }
-.hero-actions {
-display: flex;
-gap: 20px;
-flex-wrap: wrap;
-opacity: 0;
-animation: fadeUp 0.8s 0.8s forwards;
-}
-.btn-primary {
-background: var(--gold);
-color: var(--black);
-padding: 16px 40px;
-font-family: 'DM Sans', sans-serif;
-font-size: 11px;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-font-weight: 500;
-text-decoration: none;
-transition: background 0.2s, transform 0.2s;
-display: inline-block;
-}
-.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-.btn-outline {
-border: 1px solid rgba(201,168,76,0.4);
-color: var(--gold);
-padding: 16px 40px;
-font-family: 'DM Sans', sans-serif;
-font-size: 11px;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-font-weight: 400;
-text-decoration: none;
-transition: border-color 0.2s, background 0.2s, transform 0.2s;
-display: inline-block;
-}
-.btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.07); transform: translateY(-2px); }
+.hero-actions { display: flex; gap: 24px; animation: fadeUp 0.8s 0.8s forwards; opacity: 0; }
 
-.hero-stats {
-position: absolute;
-right: 60px;
-top: 50%;
-transform: translateY(-50%);
-display: flex;
-flex-direction: column;
-gap: 48px;
-z-index: 2;
-opacity: 0;
-animation: fadeIn 1s 1s forwards;
+.btn-primary {
+  background: var(--red-metallic);
+  color: var(--text-main);
+  padding: 18px 44px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  box-shadow: 0 4px 15px rgba(143, 10, 31, 0.3);
 }
-.hero-stat { text-align: right; }
-.hero-stat-num {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 52px;
-color: var(--gold);
-line-height: 1;
-display: block;
+.btn-primary:hover { background: var(--text-main); color: #101010; }
+
+.btn-outline {
+  border: 1px solid var(--border-accent);
+  color: var(--red-accent);
+  padding: 18px 44px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  background: rgba(143, 10, 31, 0.03);
 }
-.hero-stat-label {
-font-size: 10px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(--muted);
-}
-.hero-divider {
-width: 1px;
-height: 80px;
-background: linear-gradient(180deg, transparent, rgba(201,168,76,0.3), transparent);
-margin-left: auto;
-}
+.btn-outline:hover { background: rgba(143, 10, 31, 0.06); border-color: var(--red-accent); }
 
 @keyframes fadeUp {
-from { opacity: 0; transform: translateY(30px); }
-to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 @keyframes fadeIn {
-from { opacity: 0; }
-to { opacity: 1; }
-}
-
-/* TICKER */
-.ticker {
-background: var(--gold);
-overflow: hidden;
-padding: 14px 0;
-position: relative;
-z-index: 10;
-}
-.ticker-inner {
-display: flex;
-gap: 0;
-animation: ticker 30s linear infinite;
-white-space: nowrap;
-}
-.ticker-item {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 14px;
-letter-spacing: 3px;
-color: var(--black);
-padding: 0 48px;
-flex-shrink: 0;
-}
-.ticker-dot {
-color: rgba(10,10,10,0.4);
-padding: 0;
-}
-@keyframes ticker {
-from { transform: translateX(0); }
-to { transform: translateX(-50%); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* SECTIONS */
-section { position: relative; }
-
+section { padding: 140px 60px; position: relative; border-bottom: 1px solid var(--border-subtle); }
 .section-label {
-font-size: 10px;
-letter-spacing: 4px;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 20px;
-display: flex;
-align-items: center;
-gap: 16px;
+  font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--red-accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 16px;
 }
-.section-label::before {
-content: '';
-width: 40px;
-height: 1px;
-background: var(--gold);
-display: inline-block;
-}
-
+.section-label::before { content: ''; width: 30px; height: 1px; background: var(--red-accent); }
 .section-title {
-font-family: 'DM Serif Display', serif;
-font-size: clamp(36px, 5vw, 64px);
-line-height: 1.1;
-margin-bottom: 24px;
+  font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.1; margin-bottom: 2rem; font-weight: 600; letter-spacing: -0.5px;
+  color: var(--silver-metallic);
 }
-.section-title em {
-font-style: italic;
-color: var(--gold);
-}
+.section-title em { font-style: italic; color: var(--silver-metallic); font-weight: 400; }
 
 /* ABOUT */
-#about {
-padding: 140px 60px;
-background: var(--dark);
-}
-.about-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 80px;
-align-items: center;
-max-width: 1200px;
-margin: 0 auto;
-}
-.about-credentials {
-margin-top: 48px;
-display: flex;
-flex-direction: column;
-gap: 0;
-}
-.cred-item {
-padding: 18px 0;
-border-bottom: 1px solid rgba(255,255,255,0.06);
-display: flex;
-align-items: center;
-gap: 16px;
-font-size: 13px;
-color: var(--muted);
-transition: color 0.2s;
-}
-.cred-item:hover { color: var(--white); }
-.cred-item::before {
-content: '//';
-color: var(--gold);
-font-family: 'Bebas Neue', sans-serif;
-font-size: 16px;
-flex-shrink: 0;
-}
-.about-right { position: relative; }
+#about { background: var(--bg-surface); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 1200px; margin: 0 auto; align-items: center; }
 .about-card {
-background: var(--dark2);
-border: 1px solid rgba(201,168,76,0.15);
-padding: 48px;
-position: relative;
-overflow: hidden;
+  background: var(--bg-elevated); padding: 60px;
+  border: 1px solid var(--border-subtle); border-left: 3px solid var(--red-metallic);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
-.about-card::before {
-content: '';
-position: absolute;
-top: 0; left: 0; right: 0;
-height: 2px;
-background: linear-gradient(90deg, var(--gold), transparent);
-}
-.about-card-quote {
-font-family: 'DM Serif Display', serif;
-font-style: italic;
-font-size: 22px;
-line-height: 1.6;
-color: var(--white);
-margin-bottom: 32px;
-}
-.about-card-attr {
-font-size: 11px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(--gold);
-}
-.about-stats-row {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 1px;
-margin-top: 48px;
-background: rgba(201,168,76,0.1);
-}
-.about-stat {
-background: var(--dark);
-padding: 32px;
-text-align: center;
-}
-.about-stat-num {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 48px;
-color: var(--gold);
-display: block;
-line-height: 1;
-margin-bottom: 8px;
-}
-.about-stat-label {
-font-size: 10px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(--muted);
-}
+.about-card-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 24px; line-height: 1.5; margin-bottom: 2rem; }
+.about-credentials { margin-top: 3rem; }
+.cred-item { font-size: 13px; color: var(--text-muted); padding: 10px 0; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; gap: 10px; }
+.cred-item::before { content: '//'; color: var(--red-accent); font-weight: 600; }
 
 /* SERVICES */
-#services {
-padding: 140px 60px;
-background: var(--black);
-}
-.services-header {
-max-width: 1200px;
-margin: 0 auto 80px;
-display: flex;
-justify-content: space-between;
-align-items: flex-end;
-}
-.services-grid {
-max-width: 1200px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 2px;
-background: rgba(201,168,76,0.08);
-}
+#services { background: var(--bg-base); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto; }
 .service-card {
-background: var(--dark);
-padding: 52px 40px;
-position: relative;
-overflow: hidden;
-transition: background 0.3s;
-cursor: none;
+  background: var(--bg-surface); padding: 50px 40px; border: 1px solid var(--border-subtle);
+  transition: all 0.3s ease; position: relative; overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
-.service-card:hover { background: var(--dark2); }
-.service-card::after {
-content: '';
-position: absolute;
-bottom: 0; left: 0; right: 0;
-height: 2px;
-background: var(--gold);
-transform: scaleX(0);
-transform-origin: left;
-transition: transform 0.4s ease;
-}
-.service-card:hover::after { transform: scaleX(1); }
-.service-icon {
-font-size: 32px;
-margin-bottom: 32px;
-display: block;
-}
-.service-num {
-position: absolute;
-top: 40px; right: 40px;
-font-family: 'Bebas Neue', sans-serif;
-font-size: 64px;
-color: rgba(201,168,76,0.06);
-line-height: 1;
-pointer-events: none;
-}
-.service-title {
-font-family: 'DM Serif Display', serif;
-font-size: 24px;
-margin-bottom: 16px;
-}
-.service-desc {
-font-size: 13px;
-line-height: 1.9;
-color: var(--muted);
-margin-bottom: 32px;
-}
-.service-list {
-list-style: none;
-display: flex;
-flex-direction: column;
-gap: 10px;
-}
-.service-list li {
-font-size: 12px;
-color: var(--muted);
-display: flex;
-align-items: center;
-gap: 10px;
-transition: color 0.2s;
-}
-.service-list li:hover { color: var(--white); }
-.service-list li::before {
-content: '';
-width: 20px;
-height: 1px;
-background: var(--gold);
-flex-shrink: 0;
-}
+.service-card:hover { transform: translateY(-5px); border-color: var(--red-metallic); background: var(--bg-elevated); box-shadow: 0 10px 30px rgba(143, 10, 31, 0.2); }
+.service-icon { font-size: 32px; margin-bottom: 2rem; display: block; }
+.service-num { font-size: 80px; font-weight: 700; color: rgba(192, 192, 192, 0.05); position: absolute; top: -10px; right: -10px; font-family: 'Playfair Display', serif; }
+.service-title { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 1rem; color: var(--silver-metallic); }
+.service-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem; }
+.service-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.service-list li { font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 10px; }
+.service-list li::before { content: '✓'; color: var(--red-metallic); font-weight: 600; }
 
-/* ROI CALCULATOR */
-#calculator {
-padding: 140px 60px;
-background: var(--dark);
-}
-.calc-wrap {
-max-width: 900px;
-margin: 0 auto;
-}
-.calc-header { text-align: center; margin-bottom: 64px; }
-.calc-body {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 48px;
-align-items: start;
-}
-.calc-inputs { display: flex; flex-direction: column; gap: 28px; }
-.calc-field label {
-display: block;
-font-size: 10px;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 12px;
-}
-.calc-field input, .calc-field select {
-width: 100%;
-background: var(--dark2);
-border: 1px solid rgba(201,168,76,0.2);
-color: var(--white);
-padding: 16px 20px;
-font-family: 'DM Sans', sans-serif;
-font-size: 15px;
-outline: none;
-transition: border-color 0.2s;
--webkit-appearance: none;
-cursor: none;
-}
-.calc-field input:focus, .calc-field select:focus {
-border-color: var(--gold);
-}
-.calc-field select option { background: var(--dark2); }
-.calc-results {
-background: var(--dark2);
-border: 1px solid rgba(201,168,76,0.2);
-padding: 40px;
-position: sticky;
-top: 100px;
-}
-.calc-results-title {
-font-size: 10px;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(--muted);
-margin-bottom: 36px;
-padding-bottom: 20px;
-border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.calc-result-item {
-display: flex;
-justify-content: space-between;
-align-items: flex-end;
-padding: 16px 0;
-border-bottom: 1px solid rgba(255,255,255,0.04);
-}
-.calc-result-label { font-size: 12px; color: var(--muted); }
-.calc-result-val {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 28px;
-color: var(--white);
-line-height: 1;
-}
-.calc-result-val.highlight { color: var(--gold); font-size: 36px; }
-.calc-note {
-margin-top: 28px;
-font-size: 11px;
-color: var(--muted);
-line-height: 1.7;
-font-style: italic;
-}
-.calc-cta { margin-top: 28px; width: 100%; text-align: center; display: block; }
-
-/* RESOURCES / LEAD MAGNETS */
-#resources {
-padding: 140px 60px;
-background: var(--black);
-}
-.resources-grid {
-max-width: 1200px;
-margin: 64px auto 0;
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 24px;
-}
-.resource-card {
-background: var(--dark);
-border: 1px solid rgba(201,168,76,0.1);
-padding: 40px;
-position: relative;
-transition: border-color 0.3s, transform 0.3s;
-cursor: none;
-}
-.resource-card:hover {
-border-color: rgba(201,168,76,0.4);
-transform: translateY(-4px);
-}
-.resource-tag {
-font-size: 9px;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(--black);
-background: var(--gold);
-padding: 4px 10px;
-display: inline-block;
-margin-bottom: 28px;
-}
-.resource-title {
-font-family: 'DM Serif Display', serif;
-font-size: 20px;
-line-height: 1.3;
-margin-bottom: 16px;
-}
-.resource-desc {
-font-size: 12px;
-color: var(--muted);
-line-height: 1.8;
-margin-bottom: 32px;
-}
-.resource-link {
-font-size: 11px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(--gold);
-text-decoration: none;
-display: flex;
-align-items: center;
-gap: 8px;
-transition: gap 0.2s;
-}
-.resource-link:hover { gap: 16px; }
-.resource-link::after { content: '→'; }
-
-/* MODAL */
-.modal-overlay {
-display: none;
-position: fixed;
-inset: 0;
-background: rgba(10,10,10,0.92);
-z-index: 800;
-align-items: center;
-justify-content: center;
-backdrop-filter: blur(4px);
-}
-.modal-overlay.active { display: flex; }
-.modal {
-background: var(--dark2);
-border: 1px solid rgba(201,168,76,0.3);
-padding: 60px;
-max-width: 480px;
-width: 90%;
-position: relative;
-}
-.modal::before {
-content: '';
-position: absolute;
-top: 0; left: 0; right: 0;
-height: 2px;
-background: linear-gradient(90deg, var(--gold), var(--gold-dim));
-}
-.modal-close {
-position: absolute;
-top: 20px; right: 24px;
-background: none;
-border: none;
-color: var(--muted);
-font-size: 20px;
-cursor: none;
-transition: color 0.2s;
-}
-.modal-close:hover { color: var(--white); }
-.modal-title {
-font-family: 'DM Serif Display', serif;
-font-size: 28px;
-margin-bottom: 8px;
-}
-.modal-sub {
-font-size: 13px;
-color: var(--muted);
-margin-bottom: 36px;
-line-height: 1.7;
-}
-.modal-field {
-margin-bottom: 16px;
-}
-.modal-field label {
-display: block;
-font-size: 9px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 8px;
-}
-.modal-field input {
-width: 100%;
-background: var(--dark3);
-border: 1px solid rgba(201,168,76,0.2);
-color: var(--white);
-padding: 14px 18px;
-font-family: 'DM Sans', sans-serif;
-font-size: 14px;
-outline: none;
-transition: border-color 0.2s;
-cursor: none;
-}
-.modal-field input:focus { border-color: var(--gold); }
-.modal-submit {
-width: 100%;
-margin-top: 8px;
-background: var(--gold);
-color: var(--black);
-border: none;
-padding: 16px;
-font-family: 'DM Sans', sans-serif;
-font-size: 11px;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-font-weight: 500;
-cursor: none;
-transition: background 0.2s;
-}
-.modal-submit:hover { background: var(--gold-light); }
-.modal-success { display: none; text-align: center; }
-.modal-success .check {
-width: 60px; height: 60px;
-border-radius: 50%;
-background: rgba(201,168,76,0.15);
-border: 2px solid var(--gold);
-display: flex;
-align-items: center;
-justify-content: center;
-margin: 0 auto 24px;
-font-size: 24px;
-}
-.modal-success h3 {
-font-family: 'DM Serif Display', serif;
-font-size: 24px;
-margin-bottom: 12px;
-}
-.modal-success p { font-size: 13px; color: var(--muted); line-height: 1.7; }
-
-/* GLOSSARY */
-#glossary {
-padding: 140px 60px;
-background: var(--dark);
-}
-.glossary-wrap { max-width: 1200px; margin: 0 auto; }
-.glossary-search-wrap {
-position: relative;
-margin: 48px 0 56px;
-max-width: 500px;
-}
-.glossary-search {
-width: 100%;
-background: var(--dark2);
-border: 1px solid rgba(201,168,76,0.2);
-border-bottom-color: var(--gold);
-color: var(--white);
-padding: 16px 20px 16px 52px;
-font-family: 'DM Sans', sans-serif;
-font-size: 15px;
-outline: none;
-cursor: none;
-}
-.glossary-search-icon {
-position: absolute;
-left: 18px;
-top: 50%;
-transform: translateY(-50%);
-color: var(--gold);
-font-size: 16px;
-}
-.glossary-filter {
-display: flex;
-gap: 8px;
-flex-wrap: wrap;
-margin-bottom: 40px;
-}
-.filter-btn {
-padding: 8px 20px;
-border: 1px solid rgba(201,168,76,0.2);
-background: none;
-color: var(--muted);
-font-family: 'DM Sans', sans-serif;
-font-size: 10px;
-letter-spacing: 2px;
-text-transform: uppercase;
-cursor: none;
-transition: all 0.2s;
-}
-.filter-btn.active, .filter-btn:hover {
-background: var(--gold);
-color: var(--black);
-border-color: var(--gold);
-}
-.glossary-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 2px;
-background: rgba(201,168,76,0.06);
-}
-.glossary-item {
-background: var(--dark);
-padding: 32px;
-cursor: none;
-transition: background 0.2s;
-}
-.glossary-item:hover { background: var(--dark2); }
-.glossary-term {
-font-family: 'DM Serif Display', serif;
-font-size: 18px;
-margin-bottom: 10px;
-color: var(--white);
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-.glossary-cat {
-font-size: 9px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(--gold);
-font-family: 'DM Sans', sans-serif;
-}
-.glossary-def {
-font-size: 13px;
-line-height: 1.8;
-color: var(--muted);
-}
+/* CALCULATOR */
+#calculator { background: var(--bg-surface); }
+.calc-wrapper { max-width: 1000px; margin: 0 auto; }
+.calc-header { text-align: center; margin-bottom: 60px; }
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.calc-inputs { display: flex; flex-direction: column; gap: 24px; }
+.calc-field label { display: block; font-size: 10px; text-transform: uppercase; color: var(--red-accent); letter-spacing: 2px; margin-bottom: 8px; }
+.calc-field input, .calc-field select { width: 100%; padding: 16px; background: var(--bg-elevated); border: 1px solid var(--border-subtle); color: var(--text-main); font-family: 'Inter', sans-serif; -webkit-appearance: none; -moz-appearance: none; appearance: none; cursor: default; }
+.calc-field input:focus, .calc-field select:focus { border-color: var(--red-metallic); box-shadow: 0 0 10px rgba(143, 10, 31, 0.3); }
+.calc-results { background: var(--bg-elevated); padding: 40px; border: 1px solid var(--border-accent); position: sticky; top: 120px; box-shadow: 0 10px 40px rgba(143, 10, 31, 0.1); }
+.calc-result-title { font-size: 12px; text-transform: uppercase; color: var(--silver-metallic); letter-spacing: 2px; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle); }
+.calc-result-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(192, 192, 192, 0.05); }
+.calc-res-label { font-size: 14px; color: var(--text-muted); }
+.calc-res-val { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--text-main); font-weight: 600; }
+.calc-res-val.highlight { color: var(--red-accent); font-size: 36px; }
 
 /* STUDIOS */
-#studios {
-padding: 140px 60px;
-background: var(--black);
-}
-.studios-wrap { max-width: 1200px; margin: 0 auto; }
-.studios-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 2px;
-margin-top: 64px;
-background: rgba(201,168,76,0.06);
-}
-.studio-card {
-background: var(--dark);
-padding: 60px 52px;
-position: relative;
-overflow: hidden;
-transition: background 0.3s;
-}
-.studio-card:hover { background: var(--dark2); }
-.studio-card::before {
-content: '';
-position: absolute;
-inset: 0;
-background: radial-gradient(ellipse at top left, rgba(201,168,76,0.05), transparent 60%);
-pointer-events: none;
-}
-.studio-name {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 48px;
-letter-spacing: 4px;
-margin-bottom: 8px;
-}
-.studio-loc {
-font-size: 11px;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 28px;
-}
-.studio-desc {
-font-size: 13px;
-line-height: 1.9;
-color: var(--muted);
-margin-bottom: 40px;
-max-width: 380px;
-}
-.studio-link {
-font-size: 11px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(--gold);
-text-decoration: none;
-display: inline-flex;
-align-items: center;
-gap: 8px;
-border-bottom: 1px solid rgba(201,168,76,0.3);
-padding-bottom: 4px;
-transition: gap 0.2s, border-color 0.2s;
-}
-.studio-link:hover { gap: 16px; border-color: var(--gold); }
+#studios { background: var(--bg-surface); }
+.studios-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; }
+.studio-card { background: var(--bg-elevated); padding: 60px; border: 1px solid var(--border-subtle); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+.studio-card:hover { border-color: var(--red-metallic); }
+.studio-loc { font-size: 11px; text-transform: uppercase; color: var(--red-metallic); letter-spacing: 2px; margin-bottom: 12px; }
+.studio-name { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 600; color: var(--silver-metallic); margin-bottom: 20px; letter-spacing: 1px; }
+.studio-desc { font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 30px; max-width: 400px; }
+.studio-link { color: var(--silver-metallic); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid transparent; padding-bottom: 4px; display: inline-flex; }
+.studio-link:hover { color: var(--text-main); border-bottom-color: var(--silver-metallic); }
 
-/* CASE STUDIES / BLOG */
-#insights {
-padding: 140px 60px;
-background: var(--dark);
-}
-.insights-header {
-max-width: 1200px;
-margin: 0 auto 64px;
-display: flex;
-justify-content: space-between;
-align-items: flex-end;
-}
-.insights-grid {
-max-width: 1200px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1.6fr 1fr;
-gap: 2px;
-background: rgba(201,168,76,0.06);
-}
-.insight-featured {
-background: var(--dark2);
-padding: 52px;
-position: relative;
-cursor: none;
-transition: background 0.2s;
-}
-.insight-featured:hover { background: #1e1e1e; }
-.insights-side {
-display: flex;
-flex-direction: column;
-gap: 2px;
-}
-.insight-card {
-background: var(--dark2);
-padding: 36px;
-cursor: none;
-transition: background 0.2s;
-flex: 1;
-}
-.insight-card:hover { background: #1e1e1e; }
-.insight-tag {
-font-size: 9px;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(--black);
-background: var(--gold);
-padding: 4px 10px;
-display: inline-block;
-margin-bottom: 24px;
-}
-.insight-tag.label-strategy { background: var(--gold); }
-.insight-tag.label-indie { background: #5a8fa3; }
-.insight-tag.label-studio { background: #7a6a9a; }
-.insight-title {
-font-family: 'DM Serif Display', serif;
-font-size: 24px;
-line-height: 1.3;
-margin-bottom: 16px;
-}
-.insight-title-sm {
-font-family: 'DM Serif Display', serif;
-font-size: 17px;
-line-height: 1.4;
-margin-bottom: 12px;
-}
-.insight-excerpt {
-font-size: 13px;
-color: var(--muted);
-line-height: 1.8;
-margin-bottom: 32px;
-}
-.insight-meta {
-font-size: 10px;
-letter-spacing: 1.5px;
-color: var(--muted);
-text-transform: uppercase;
-}
-.insight-link {
-color: var(--gold);
-text-decoration: none;
-font-size: 11px;
-letter-spacing: 2px;
-text-transform: uppercase;
-display: flex;
-align-items: center;
-gap: 8px;
-margin-top: 24px;
-transition: gap 0.2s;
-}
-.insight-link:hover { gap: 16px; }
-
-/* TESTIMONIALS */
-#testimonials {
-padding: 140px 60px;
-background: var(--black);
-overflow: hidden;
-}
-.testimonials-wrap { max-width: 1200px; margin: 0 auto; }
-.testimonials-slider {
-display: flex;
-gap: 24px;
-margin-top: 64px;
-overflow-x: auto;
-scrollbar-width: none;
-padding-bottom: 8px;
-}
-.testimonials-slider::-webkit-scrollbar { display: none; }
-.testimonial-card {
-background: var(--dark);
-border: 1px solid rgba(201,168,76,0.1);
-padding: 48px;
-min-width: 380px;
-flex-shrink: 0;
-position: relative;
-transition: border-color 0.3s;
-}
-.testimonial-card:hover { border-color: rgba(201,168,76,0.3); }
-.testimonial-quote {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 80px;
-color: rgba(201,168,76,0.15);
-line-height: 0.8;
-margin-bottom: 16px;
-}
-.testimonial-text {
-font-family: 'DM Serif Display', serif;
-font-style: italic;
-font-size: 17px;
-line-height: 1.7;
-color: var(--white);
-margin-bottom: 32px;
-}
-.testimonial-author {
-font-size: 11px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(--gold);
-}
-.testimonial-role {
-font-size: 11px;
-color: var(--muted);
-margin-top: 4px;
-}
-
-/* WEBINAR / NEWSLETTER */
-#community {
-padding: 140px 60px;
-background: var(--dark);
-}
-.community-grid {
-max-width: 1200px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 2px;
-margin-top: 64px;
-background: rgba(201,168,76,0.06);
-}
-.community-card {
-background: var(--dark2);
-padding: 60px 52px;
-position: relative;
-overflow: hidden;
-}
-.community-card::before {
-content: '';
-position: absolute;
-top: 0; left: 0; right: 0;
-height: 2px;
-background: linear-gradient(90deg, var(--gold), transparent);
-}
-.community-card-icon { font-size: 40px; margin-bottom: 32px; display: block; }
-.community-card-title {
-font-family: 'DM Serif Display', serif;
-font-size: 28px;
-margin-bottom: 16px;
-}
-.community-card-desc {
-font-size: 13px;
-line-height: 1.9;
-color: var(--muted);
-margin-bottom: 40px;
-}
-.newsletter-form { display: flex; gap: 0; }
-.newsletter-input {
-flex: 1;
-background: var(--dark3);
-border: 1px solid rgba(201,168,76,0.2);
-border-right: none;
-color: var(--white);
-padding: 16px 20px;
-font-family: 'DM Sans', sans-serif;
-font-size: 14px;
-outline: none;
-cursor: none;
-}
-.newsletter-input:focus { border-color: var(--gold); }
-.newsletter-btn {
-background: var(--gold);
-color: var(--black);
-border: none;
-padding: 16px 28px;
-font-family: 'DM Sans', sans-serif;
-font-size: 11px;
-letter-spacing: 2px;
-text-transform: uppercase;
-font-weight: 500;
-cursor: none;
-transition: background 0.2s;
-white-space: nowrap;
-}
-.newsletter-btn:hover { background: var(--gold-light); }
-.webinar-upcoming {
-border: 1px solid rgba(201,168,76,0.15);
-padding: 24px 28px;
-display: flex;
-gap: 24px;
-align-items: center;
-margin-bottom: 16px;
-transition: border-color 0.2s;
-}
-.webinar-upcoming:hover { border-color: rgba(201,168,76,0.4); }
-.webinar-date {
-text-align: center;
-flex-shrink: 0;
-width: 56px;
-}
-.webinar-month {
-font-size: 9px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(--gold);
-}
-.webinar-day {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 40px;
-line-height: 1;
-color: var(--white);
-}
-.webinar-info-title { font-size: 14px; margin-bottom: 4px; }
-.webinar-info-desc { font-size: 12px; color: var(--muted); }
-.webinar-register {
-margin-left: auto;
-font-size: 9px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(--gold);
-text-decoration: none;
-flex-shrink: 0;
-transition: opacity 0.2s;
-cursor: none;
-}
-.webinar-register:hover { opacity: 0.7; }
+/* INSIGHTS */
+#insights { background: var(--bg-surface); }
+.insights-grid { display: grid; grid-template-columns: 2fr 1.2fr; gap: 2px; max-width: 1200px; margin: 0 auto; background: rgba(192, 192, 192, 0.03); }
+.insight-card { background: var(--bg-elevated); padding: 40px; }
+.insight-card:hover { background: #1a1a1a; }
+.insight-featured { grid-column: 1 / 2; grid-row: 1 / 3; display: flex; flex-direction: column; justify-content: space-between; padding: 60px; }
+.insight-featured .insight-tag { margin-bottom: 30px; }
+.insight-featured .insight-excerpt { margin-bottom: 40px; max-width: 500px; }
+.insight-title { font-family: 'Playfair Display', serif; font-size: 28px; line-height: 1.3; font-weight: 600; margin-bottom: 20px; color: var(--silver-metallic); }
+.insight-excerpt { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
+.insight-meta { font-size: 11px; text-transform: uppercase; color: var(--red-metallic); letter-spacing: 1px; }
+.insight-link { color: var(--silver-metallic); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 8px; margin-top: 24px; display: inline-flex; }
+.insight-link:hover { color: var(--text-main); }
+.insight-tag { display: inline-block; padding: 6px 12px; background: rgba(143, 10, 31, 0.1); border: 1px solid var(--red-accent); color: var(--red-accent); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-radius: 2px; }
 
 /* PRICING */
-#pricing {
-padding: 140px 60px;
-background: var(--black);
-}
-.pricing-wrap { max-width: 1200px; margin: 0 auto; }
-.pricing-toggle {
-display: flex;
-gap: 0;
-margin: 48px auto 64px;
-width: fit-content;
-border: 1px solid rgba(201,168,76,0.2);
-}
-.toggle-btn {
-padding: 12px 32px;
-background: none;
-border: none;
-color: var(--muted);
-font-family: 'DM Sans', sans-serif;
-font-size: 11px;
-letter-spacing: 2px;
-text-transform: uppercase;
-cursor: none;
-transition: all 0.2s;
-}
-.toggle-btn.active {
-background: var(--gold);
-color: var(--black);
-}
-.pricing-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 2px;
-background: rgba(201,168,76,0.06);
-}
-.pricing-card {
-background: var(--dark);
-padding: 52px 40px;
-position: relative;
-transition: background 0.2s;
-}
-.pricing-card.featured {
-background: var(--dark2);
-border: 1px solid rgba(201,168,76,0.4);
-}
-.pricing-card.featured::before {
-content: 'MOST POPULAR';
-position: absolute;
-top: -1px; left: 50%;
-transform: translateX(-50%);
-background: var(--gold);
-color: var(--black);
-font-size: 9px;
-letter-spacing: 2.5px;
-padding: 5px 16px;
-}
-.pricing-tier {
-font-size: 10px;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 16px;
-}
-.pricing-name {
-font-family: 'DM Serif Display', serif;
-font-size: 28px;
-margin-bottom: 32px;
-}
-.pricing-price {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 64px;
-color: var(--white);
-line-height: 1;
-margin-bottom: 8px;
-}
-.pricing-price span { font-size: 28px; vertical-align: super; }
-.pricing-cadence {
-font-size: 11px;
-color: var(--muted);
-margin-bottom: 40px;
-}
-.pricing-features {
-list-style: none;
-display: flex;
-flex-direction: column;
-gap: 14px;
-margin-bottom: 48px;
-}
-.pricing-features li {
-font-size: 13px;
-color: var(--muted);
-display: flex;
-align-items: flex-start;
-gap: 12px;
-line-height: 1.5;
-}
-.pricing-features li::before {
-content: '✓';
-color: var(--gold);
-flex-shrink: 0;
-font-size: 12px;
-}
+#pricing { background: var(--bg-base); }
+.pricing-wrapper { max-width: 1200px; margin: 0 auto; }
+.pricing-toggle-wrap { display: flex; justify-content: center; margin-bottom: 60px; }
+.pricing-toggle { display: flex; border: 1px solid var(--border-subtle); border-radius: 4px; overflow: hidden; background: var(--bg-surface); }
+.pricing-toggle-btn { background: none; border: none; color: var(--text-muted); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; padding: 14px 30px; font-family: 'Inter', sans-serif; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+.pricing-toggle-btn.active { background: var(--silver-metallic); color: #101010; font-weight: 600; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.pricing-card { background: var(--bg-surface); padding: 50px; border: 1px solid var(--border-subtle); display: flex; flex-direction: column; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.pricing-card.featured { border-color: var(--red-metallic); box-shadow: 0 10px 40px rgba(143, 10, 31, 0.15); transform: translateY(-10px); }
+.pricing-card.featured .featured-label { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--red-metallic); color: var(--text-main); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; padding: 6px 16px; border-radius: 20px; }
+.pricing-tier { font-size: 11px; text-transform: uppercase; color: var(--red-accent); letter-spacing: 2px; margin-bottom: 12px; }
+.pricing-name { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600; color: var(--silver-metallic); margin-bottom: 30px; }
+.pricing-price { font-family: 'Playfair Display', serif; font-size: 60px; font-weight: 700; color: var(--text-main); margin-bottom: 8px; }
+.pricing-price span { font-size: 20px; font-weight: 500; color: var(--text-muted); vertical-align: super; }
+.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; margin-top: auto; }
+.pricing-features li { font-size: 14px; color: var(--text-muted); display: flex; align-items: start; gap: 12px; }
+.pricing-features li::before { content: '✓'; color: var(--red-metallic); font-weight: 600; }
 
 /* CONTACT */
-#contact {
-padding: 140px 60px;
-background: var(--dark);
-position: relative;
-overflow: hidden;
+#contact { background: var(--bg-surface); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; max-width: 1200px; margin: 0 auto; align-items: start; }
+.contact-info-list { display: flex; flex-direction: column; gap: 30px; }
+.contact-info-item .info-label { font-size: 11px; text-transform: uppercase; color: var(--red-accent); letter-spacing: 2px; margin-bottom: 8px; }
+.contact-info-item .info-val { font-size: 15px; color: var(--silver-metallic); font-weight: 500; }
+.contact-form-panel { background: var(--bg-elevated); padding: 50px; border: 1px solid var(--border-subtle); box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+.contact-form-panel h3 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; margin-bottom: 40px; color: var(--silver-metallic); }
+.contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.contact-field.full { grid-column: 1 / 3; }
+.contact-field label { display: block; font-size: 10px; text-transform: uppercase; color: var(--red-accent); letter-spacing: 2px; margin-bottom: 8px; }
+.contact-field input, .contact-field select, .contact-field textarea { width: 100%; padding: 16px; background: #202020; border: 1px solid var(--border-subtle); color: var(--text-main); font-family: 'Inter', sans-serif; -webkit-appearance: none; appearance: none; -moz-appearance: none; }
+.contact-field input:focus, .contact-field select:focus, .contact-field textarea:focus { border-color: var(--red-metallic); box-shadow: 0 0 10px rgba(143, 10, 31, 0.3); }
+.submit-btn {
+  grid-column: 1 / 3;
+  margin-top: 10px;
+  background: var(--red-metallic);
+  color: var(--text-main);
+  padding: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  -webkit-appearance: none; appearance: none; -moz-appearance: none;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(143, 10, 31, 0.4);
+  position: relative;
+  overflow: hidden;
 }
-#contact::before {
-content: 'CONNECT';
-position: absolute;
-bottom: -40px; right: -20px;
-font-family: 'Bebas Neue', sans-serif;
-font-size: 280px;
-color: rgba(201,168,76,0.03);
-line-height: 1;
-pointer-events: none;
-user-select: none;
+.submit-btn:hover {
+  background: var(--text-main);
+  color: #101010;
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
 }
-.contact-grid {
-max-width: 1200px;
-margin: 64px auto 0;
-display: grid;
-grid-template-columns: 1fr 1.4fr;
-gap: 80px;
-align-items: start;
-}
-.contact-info-item {
-margin-bottom: 40px;
-}
-.contact-info-label {
-font-size: 10px;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 8px;
-}
-.contact-info-val {
-font-size: 15px;
-color: var(--white);
-text-decoration: none;
-display: block;
-transition: color 0.2s;
-}
-.contact-info-val:hover { color: var(--gold); }
-.contact-form { display: flex; flex-direction: column; gap: 20px; }
-.contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.contact-field label {
-display: block;
-font-size: 9px;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 10px;
-}
-.contact-field input,
-.contact-field select,
-.contact-field textarea {
-width: 100%;
-background: var(--dark2);
-border: 1px solid rgba(201,168,76,0.15);
-color: var(--white);
-padding: 16px 20px;
-font-family: 'DM Sans', sans-serif;
-font-size: 14px;
-outline: none;
-transition: border-color 0.2s;
-resize: vertical;
-cursor: none;
--webkit-appearance: none;
-}
-.contact-field input:focus,
-.contact-field select:focus,
-.contact-field textarea:focus {
-border-color: var(--gold);
-}
-.contact-field select option { background: var(--dark2); }
 
 /* FOOTER */
-footer {
-background: var(--black);
-border-top: 1px solid rgba(201,168,76,0.1);
-padding: 80px 60px 40px;
+footer { background: var(--bg-base); padding: 80px 60px 40px; border-top: 1px solid var(--bg-surface); }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; padding-bottom: 60px; border-bottom: 1px solid var(--border-subtle); }
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
 }
-.footer-grid {
-max-width: 1200px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1.5fr 1fr 1fr 1fr;
-gap: 60px;
-padding-bottom: 60px;
-border-bottom: 1px solid rgba(255,255,255,0.04);
-}
-.footer-brand-logo {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 28px;
-letter-spacing: 3px;
-color: var(--gold);
-margin-bottom: 16px;
-display: block;
-}
-.footer-brand-desc {
-font-size: 13px;
-color: var(--muted);
-line-height: 1.8;
-margin-bottom: 28px;
-}
-.footer-social { display: flex; gap: 12px; }
-.footer-social a {
-width: 36px; height: 36px;
-border: 1px solid rgba(201,168,76,0.2);
-display: flex;
-align-items: center;
-justify-content: center;
-color: var(--muted);
-text-decoration: none;
-font-size: 13px;
-transition: border-color 0.2s, color 0.2s;
-}
-.footer-social a:hover { border-color: var(--gold); color: var(--gold); }
-.footer-col-title {
-font-size: 10px;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 28px;
-}
-.footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-.footer-links a {
-color: var(--muted);
-text-decoration: none;
-font-size: 13px;
-transition: color 0.2s;
-}
-.footer-links a:hover { color: var(--white); }
-.footer-bottom {
-max-width: 1200px;
-margin: 40px auto 0;
-display: flex;
-justify-content: space-between;
-align-items: center;
-font-size: 11px;
-color: var(--muted);
-}
-.footer-bottom a { color: var(--muted); text-decoration: none; }
-.footer-bottom a:hover { color: var(--gold); }
-
-/* MOBILE NAV */
-.mobile-nav {
-display: none;
-position: fixed;
-inset: 0;
-background: var(--black);
-z-index: 450;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 32px;
-}
-.mobile-nav.open { display: flex; }
-.mobile-nav a {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 36px;
-letter-spacing: 4px;
-color: var(--white);
-text-decoration: none;
-transition: color 0.2s;
-}
-.mobile-nav a:hover { color: var(--gold); }
+.footer-logo-img { height: 48px; width: auto; }
+.footer-logo-text { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--silver-metallic); font-weight: 700; }
+.footer-logo-text span { color: var(--red-metallic); font-style: italic; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.footer-links a { color: var(--text-muted); font-size: 13px; }
+.footer-links a:hover { color: var(--text-main); }
+.footer-bottom { max-width: 1200px; margin: 40px auto 0; display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); }
+.footer-star { font-size: 14px; color: var(--silver-metallic); }
 
 /* SCROLL REVEAL */
-.reveal {
-opacity: 0;
-transform: translateY(40px);
-transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible {
-opacity: 1;
-transform: translateY(0);
-}
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* RESPONSIVE */
 @media (max-width: 1024px) {
-nav { padding: 20px 30px; }
-.nav-links { display: none; }
-.hamburger { display: flex; }
-#hero { padding: 0 30px; }
-.hero-stats { display: none; }
-.hero-title { font-size: clamp(60px, 12vw, 120px); }
-.about-grid, .calc-body, .community-grid,
-.contact-grid, .studios-grid, .insights-grid { grid-template-columns: 1fr; gap: 40px; }
-.services-grid, .resources-grid, .pricing-grid { grid-template-columns: 1fr; }
-#about, #services, #calculator, #resources, #glossary,
-#studios, #insights, #testimonials, #community, #pricing, #contact { padding: 80px 30px; }
-footer { padding: 60px 30px 30px; }
-.footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-.services-header, .insights-header { flex-direction: column; align-items: flex-start; gap: 24px; }
-.glossary-grid { grid-template-columns: 1fr; }
-.contact-row { grid-template-columns: 1fr; }
-.about-stats-row { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { display: none; }
+  .hero-content { flex-direction: column; gap: 40px; text-align: center; }
+  .hero-logo-large { max-width: 100%; }
+  .hero-title { font-size: clamp(50px, 10vw, 80px); }
+  .hero-text { max-width: 100%; display: flex; flex-direction: column; align-items: center; }
+  .about-grid, .studios-grid, .calc-grid, .pricing-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .insights-grid { grid-template-columns: 1fr; gap: 2px; }
+  .insight-featured { grid-column: auto; grid-row: auto; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  section { padding: 80px 30px; }
+  nav { padding: 20px 30px; }
+  .nav-logo-text { font-size: 18px; }
+  .contact-form { grid-template-columns: 1fr; gap: 16px; }
+  .contact-field.full, .submit-btn { grid-column: auto; }
 }
 
 @media (max-width: 640px) {
-.footer-grid { grid-template-columns: 1fr; }
-.newsletter-form { flex-direction: column; }
-.newsletter-btn { padding: 14px; }
-.modal { padding: 40px 24px; }
-.pricing-toggle { width: 100%; }
-.toggle-btn { flex: 1; padding: 12px 16px; }
-.hero-actions { flex-direction: column; }
-.btn-primary, .btn-outline { text-align: center; }
+  .services-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .pricing-toggle { width: 100%; }
+  .pricing-toggle-btn { flex: 1; padding: 14px 10px; }
 }
 </style>
-
 </head>
 <body>
 
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- MOBILE NAV -->
-
-<div class="mobile-nav" id="mobileNav">
-  <a href="#about" onclick="closeMobileNav()">About</a>
-  <a href="#services" onclick="closeMobileNav()">Services</a>
-  <a href="#resources" onclick="closeMobileNav()">Resources</a>
-  <a href="#glossary" onclick="closeMobileNav()">Glossary</a>
-  <a href="#studios" onclick="closeMobileNav()">Studios</a>
-  <a href="#insights" onclick="closeMobileNav()">Insights</a>
-  <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
-  <a href="#contact" onclick="closeMobileNav()">Contact</a>
-</div>
-
-<!-- NAV -->
-
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">Master<span>of</span>Music Industry</a>
+  <a href="#hero" class="nav-logo-link">
+    <img src="image_0.png" alt="Master of Music Industry Logo" class="nav-logo-img">
+    <span class="nav-logo-text">Master <span>of</span> Music Industry</span>
+  </a>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#services">Services</a>
-    <a href="#resources">Resources</a>
-    <a href="#glossary">Glossary</a>
+    <a href="#calculator">Interactive Tool</a>
     <a href="#studios">Studios</a>
     <a href="#insights">Insights</a>
     <a href="#pricing">Pricing</a>
     <a href="#contact" class="nav-cta">Book a Call</a>
   </div>
-  <div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
-    <span></span><span></span><span></span>
-  </div>
 </nav>
 
-<!-- HERO -->
-
 <section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-line"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Music Industry Consulting — Los Angeles, CA</p>
-    <h1 class="hero-title">
-      Navigate<br>the Industry
-      <em>With Confidence.</em>
-    </h1>
-    <p class="hero-sub">
-      <strong>25 years in production. 20 years in business.</strong> I build the infrastructure — physical studios and business strategy — that turns creative vision into lasting careers.
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Book a Free Strategy Call</a>
-      <a href="#resources" class="btn-outline">Free Resources</a>
-    </div>
-  </div>
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <span class="hero-stat-num">25+</span>
-      <span class="hero-stat-label">Years in Production</span>
-    </div>
-    <div class="hero-divider"></div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">6</span>
-      <span class="hero-stat-label">Studios Built</span>
-    </div>
-    <div class="hero-divider"></div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">USC</span>
-      <span class="hero-stat-label">Music Industry M.A.</span>
+    <img src="image_0.png" alt="Master of Music Industry Large Logo" class="hero-logo-large">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Expert Consulting & Studio Architecture — Los Angeles, CA</p>
+      <h1 class="hero-title">Navigate the Industry<br><em>With Confidence.</em></h1>
+      <p class="hero-sub">
+        <strong>25 years in production. 20 years in business.</strong> I build the complete infrastructure — from physical studio spaces to business strategy — that turns creative vision into lasting, lucrative careers.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Get Free Strategy Call</a>
+        <a href="#about" class="btn-outline">Explore My Expertise</a>
+      </div>
     </div>
   </div>
 </section>
-
-<!-- TICKER -->
-
-<div class="ticker">
-  <div class="ticker-inner" id="tickerInner">
-    <span class="ticker-item">Sync Licensing</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Label Consulting</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Studio Design</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Artist Development</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Royalty Registration</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Release Strategy</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Contract Negotiation</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Sound Architecture</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Sync Licensing</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Label Consulting</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Studio Design</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Artist Development</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Royalty Registration</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Release Strategy</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Contract Negotiation</span>
-    <span class="ticker-item ticker-dot">✦</span>
-    <span class="ticker-item">Sound Architecture</span>
-    <span class="ticker-item ticker-dot">✦</span>
-  </div>
-</div>
-
-<!-- ABOUT -->
 
 <section id="about">
   <div class="about-grid">
     <div class="reveal">
       <p class="section-label">About Garrett</p>
       <h2 class="section-title">I Don't Just Offer Advice.<br><em>I Build Infrastructure.</em></h2>
-      <p style="font-size:14px;line-height:1.9;color:var(--muted);margin-bottom:24px;">
+      <p style="font-size:15px;line-height:1.8;color:var(--text-muted);margin-bottom:24px;">
         Whether it's the physical infrastructure of a world-class recording studio or the business infrastructure required to monetize your music — royalties, sync, strategy — I provide the blueprint for longevity in an industry that chews people up.
       </p>
-      <p style="font-size:14px;line-height:1.9;color:var(--muted);margin-bottom:24px;">
-        I understand the tactile reality of the gear because I still use it. Whether I am laying down a groove on a five-string Warwick or dialing in a tone on an ESP LTD bass, I know what performers need. Beyond the studio floor, my background managing mid-level relationships at Synergy Direct Marketing Solutions means I bring rigorous corporate strategy, diplomacy, and direct marketing expertise to your music career.
-      </p>
-      <p style="font-size:14px;line-height:1.9;color:var(--muted);">
-        As owner of <strong style="color:var(--white);font-weight:400;">Haven Recording</strong>, listed in the LA Times' Top 32 studios in SoCal, I bridge the gap between creative vision and technical execution — for independent artists and major labels alike.
+      <p style="font-size:15px;line-height:1.8;color:var(--text-muted);">
+        As owner of <strong style="color:var(--text-main);font-weight:500;">Haven Recording</strong>, listed in the LA Times' Top 32 studios in SoCal, I bridge the gap between creative vision and technical execution — for independent artists and major labels alike.
       </p>
       <div class="about-credentials">
-        <div class="cred-item">M.S. in Music Industry, U.S.C. — Focus on Sync Licensing</div>
+        <div class="cred-item">MS in Music Industry, USC (Sync Licensing)</div>
+        <div class="cred-item">Designed & Built 6 Studios, T.E.N. Studios Palm Springs</div>
         <div class="cred-item">Owner, Haven Recording (Downtown Los Angeles)</div>
-        <div class="cred-item">Designed & Built 6 Studios incl. T.E.N. Studios Palm Springs</div>
-        <div class="cred-item">25+ Years as Performing Musician</div>
-        <div class="cred-item">Expert in Analog/Digital Integration & ProTools Optimization</div>
-        <div class="cred-item">20 Years Music Business Strategy & Consulting</div>
       </div>
     </div>
     <div class="reveal">
       <div class="about-card">
         <p class="about-card-quote">"I bridge the gap between creative vision and technical execution — building careers designed to last."</p>
-        <p class="about-card-attr">— Garrett, The Master of Music Industry</p>
-      </div>
-      <div class="about-stats-row">
-        <div class="about-stat">
-          <span class="about-stat-num">25+</span>
-          <span class="about-stat-label">Years in Production</span>
-        </div>
-        <div class="about-stat">
-          <span class="about-stat-num">6</span>
-          <span class="about-stat-label">Studios Built</span>
-        </div>
-        <div class="about-stat">
-          <span class="about-stat-num">Top 32</span>
-          <span class="about-stat-label">SoCal Studios (LA Times)</span>
-        </div>
-        <div class="about-stat">
-          <span class="about-stat-num">USC</span>
-          <span class="about-stat-label">Music Industry M.A.</span>
-        </div>
+        <p style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--red-metallic);">— Garrett, The Master of Music Industry</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- SERVICES -->
-
 <section id="services">
-  <div class="services-header reveal">
-    <div>
-      <p class="section-label">What I Do</p>
-      <h2 class="section-title">Complete Career<br><em>Infrastructure</em></h2>
-    </div>
-    <a href="#contact" class="btn-outline">Get Started →</a>
+  <div class="reveal" style="text-align: center; margin-bottom: 80px;">
+    <p class="section-label" style="justify-content: center;">Comprehensive Solutions</p>
+    <h2 class="section-title">Career<br><em>Infrastructure</em></h2>
   </div>
   <div class="services-grid">
     <div class="service-card reveal">
@@ -1674,9 +493,8 @@ footer { padding: 60px 30px 30px; }
         <li>Independent vs. Major Label Analysis</li>
         <li>Release Strategy & Scheduling</li>
         <li>Royalties Registration (PROs, SoundExchange)</li>
-        <li>Contract Negotiation & Review</li>
+        <li>Contract Negotiation Support</li>
         <li>Sync Licensing Consulting</li>
-        <li>A&R and Artist Development</li>
       </ul>
     </div>
     <div class="service-card reveal">
@@ -1689,7 +507,6 @@ footer { padding: 60px 30px 30px; }
         <li>Sound Treatment & Acoustics</li>
         <li>Console Wiring & Patchbay Integration</li>
         <li>Analog to Digital Workflow Setup</li>
-        <li>Equipment Selection & Installation</li>
         <li>ProTools Optimization</li>
       </ul>
     </div>
@@ -1701,7 +518,7 @@ footer { padding: 60px 30px 30px; }
       <ul class="service-list">
         <li>Live Event Planning & Management</li>
         <li>Live Streaming Audio Production</li>
-        <li>Media Conversion (Tape/CD/Vinyl to Digital)</li>
+        <li>Media Conversion (Tape to Digital)</li>
         <li>Digital Archiving</li>
         <li>Session Engineering</li>
       </ul>
@@ -1709,30 +526,28 @@ footer { padding: 60px 30px 30px; }
   </div>
 </section>
 
-<!-- ROI CALCULATOR -->
-
 <section id="calculator">
-  <div class="calc-wrap">
+  <div class="calc-wrapper">
     <div class="calc-header reveal">
       <p class="section-label" style="justify-content:center;">Interactive Tool</p>
-      <h2 class="section-title">How Much <em>Are You Leaving</em><br>on the Table?</h2>
-      <p style="font-size:14px;color:var(--muted);max-width:480px;margin:16px auto 0;line-height:1.8;">
-        Enter your current numbers. See the revenue gap — and what strategic consulting could realistically unlock for your music career.
+      <h2 class="section-title">How Much Are You<br><em>Leaving on the Table?</em></h2>
+      <p style="font-size:14px;color:var(--text-muted);max-width:480px;margin:16px auto 0;line-height:1.8;">
+        Enter your current numbers to see the revenue gap — and what strategic consulting could realistically unlock for your career.
       </p>
     </div>
-    <div class="calc-body reveal">
+    <div class="calc-grid reveal">
       <div class="calc-inputs">
         <div class="calc-field">
           <label>Monthly Streams (Spotify/Apple)</label>
-          <input type="number" id="calcStreams" placeholder="e.g. 50000" oninput="calcROI()" />
+          <input type="number" id="calcStreams" placeholder="e.g. 100000" oninput="calcROI()" />
         </div>
         <div class="calc-field">
           <label>Monthly Merch / Sales Revenue ($)</label>
-          <input type="number" id="calcMerch" placeholder="e.g. 500" oninput="calcROI()" />
+          <input type="number" id="calcMerch" placeholder="e.g. 1500" oninput="calcROI()" />
         </div>
         <div class="calc-field">
           <label>Monthly Live / Show Revenue ($)</label>
-          <input type="number" id="calcLive" placeholder="e.g. 1500" oninput="calcROI()" />
+          <input type="number" id="calcLive" placeholder="e.g. 5000" oninput="calcROI()" />
         </div>
         <div class="calc-field">
           <label>Are You Registered with a PRO?</label>
@@ -1748,376 +563,137 @@ footer { padding: 60px 30px 30px; }
             <option value="yes">Yes</option>
           </select>
         </div>
-        <div class="calc-field">
-          <label>Artist Stage</label>
-          <select id="calcStage" onchange="calcROI()">
-            <option value="emerging">Emerging (0–5K monthly listeners)</option>
-            <option value="growing">Growing (5K–50K monthly listeners)</option>
-            <option value="established">Established (50K+ monthly listeners)</option>
-          </select>
-        </div>
       </div>
       <div class="calc-results">
-        <p class="calc-results-title">// Your Revenue Snapshot</p>
+        <p class="calc-result-title">// Your Revenue Snapshot</p>
         <div class="calc-result-item">
-          <span class="calc-result-label">Est. Streaming Revenue</span>
-          <span class="calc-result-val" id="resStreaming">$0</span>
-        </div>
-        <div class="calc-result-item">
-          <span class="calc-result-label">Merch + Live Revenue</span>
-          <span class="calc-result-val" id="resMerch">$0</span>
+          <span class="calc-res-label">Est. Streaming Revenue</span>
+          <span class="calc-res-val" id="resStreaming">$0</span>
         </div>
         <div class="calc-result-item">
-          <span class="calc-result-label">Est. Uncollected Royalties</span>
-          <span class="calc-result-val" id="resRoyalties" style="color:#e06060;">$0</span>
+          <span class="calc-res-label">Merch + Live Revenue</span>
+          <span class="calc-res-val" id="resMerch">$0</span>
         </div>
         <div class="calc-result-item">
-          <span class="calc-result-label">Sync Licensing Potential</span>
-          <span class="calc-result-val" id="resSync" style="color:#e06060;">$0</span>
+          <span class="calc-res-label">Est. Uncollected Royalties</span>
+          <span class="calc-res-val" id="resRoyalties" style="color:#e06060;">$0</span>
         </div>
-        <div class="calc-result-item" style="padding-top:24px;border-top:1px solid rgba(201,168,76,0.2);">
-          <span class="calc-result-label" style="color:var(--white);font-size:13px;">Total Estimated Gap</span>
-          <span class="calc-result-val highlight" id="resTotal">$0</span>
+        <div class="calc-result-item">
+          <span class="calc-res-label">Sync Licensing Potential</span>
+          <span class="calc-res-val" id="resSync" style="color:#e06060;">$0</span>
         </div>
-        <p class="calc-note">* Estimates based on industry averages. Results vary. This tool is illustrative — a consultation will give you a precise picture.</p>
-        <a href="#contact" class="btn-primary calc-cta">Unlock This Revenue →</a>
+        <div class="calc-result-item" style="padding-top:24px;border-top:1px solid rgba(192,192,192,0.1);">
+          <span class="calc-res-label" style="color:var(--text-main);font-size:15px; font-weight:500;">Total Estimated Gap</span>
+          <span class="calc-res-val highlight" id="resTotal">$0</span>
+        </div>
+        <a href="#contact" class="btn-primary" style="display:block;text-align:center;width:100%;margin-top:24px;">Let's Unlock This Revenue</a>
       </div>
     </div>
   </div>
 </section>
-
-<!-- RESOURCES -->
-
-<section id="resources">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="reveal">
-      <p class="section-label">Free Downloads</p>
-      <h2 class="section-title">Industry Knowledge,<br><em>No Paywall.</em></h2>
-      <p style="font-size:14px;color:var(--muted);max-width:480px;margin-top:16px;line-height:1.8;">
-        Tools and guides distilled from 25 years navigating the music industry. Yours free — just leave your email.
-      </p>
-    </div>
-  </div>
-  <div class="resources-grid">
-    <div class="resource-card reveal" onclick="openModal('The Independent Artist\'s Release Checklist', 'A step-by-step pre-release guide covering distribution, royalty registration, playlist pitching, PR, and social strategy.')">
-      <span class="resource-tag">Checklist</span>
-      <h3 class="resource-title">The Independent Artist's Release Checklist</h3>
-      <p class="resource-desc">Everything you need to do before, during, and after dropping a single or album — so nothing falls through the cracks.</p>
-      <a class="resource-link" href="javascript:void(0)">Download Free</a>
-    </div>
-    <div class="resource-card reveal" onclick="openModal('How to Pitch to Record Labels', 'A complete guide on what A&R reps actually look for, how to format your pitch, and how to follow up professionally.')">
-      <span class="resource-tag">Guide</span>
-      <h3 class="resource-title">How to Pitch to Record Labels (And Actually Get a Response)</h3>
-      <p class="resource-desc">What A&R reps actually want to see — and the common mistakes that get artists immediately ignored.</p>
-      <a class="resource-link" href="javascript:void(0)">Download Free</a>
-    </div>
-    <div class="resource-card reveal" onclick="openModal('Royalties Explained: Your Complete Guide', 'A plain-English breakdown of PROs, mechanical royalties, SoundExchange, sync fees, and how to collect every dollar owed to you.')">
-      <span class="resource-tag">Guide</span>
-      <h3 class="resource-title">Royalties Explained: Stop Leaving Money on the Table</h3>
-      <p class="resource-desc">A plain-English breakdown of PROs, mechanical royalties, SoundExchange, and sync — and how to collect every dollar owed to you.</p>
-      <a class="resource-link" href="javascript:void(0)">Download Free</a>
-    </div>
-    <div class="resource-card reveal" onclick="openModal('The 360 Deal Decoded', 'What a 360 deal really means, what you give up, and how to negotiate if you have no choice but to sign one.')">
-      <span class="resource-tag">Deep Dive</span>
-      <h3 class="resource-title">The 360 Deal Decoded: What You're Really Signing</h3>
-      <p class="resource-desc">Labels will offer you a 360. Before you sign, understand exactly what you're giving up — and what you can negotiate.</p>
-      <a class="resource-link" href="javascript:void(0)">Download Free</a>
-    </div>
-    <div class="resource-card reveal" onclick="openModal('Sync Licensing Starter Pack', 'How to get your music into TV, film, and ads — including how to format stems, find supervisors, and price your placements.')">
-      <span class="resource-tag">Starter Pack</span>
-      <h3 class="resource-title">Sync Licensing Starter Pack</h3>
-      <p class="resource-desc">How to position your music for TV, film, and advertising placements — including how to format stems and price deals.</p>
-      <a class="resource-link" href="javascript:void(0)">Download Free</a>
-    </div>
-    <div class="resource-card reveal" onclick="openModal('State of Independent Music 2025', 'An industry report on streaming economics, DIY distribution, sync trends, and what independent artists should focus on this year.')">
-      <span class="resource-tag">Industry Report</span>
-      <h3 class="resource-title">State of Independent Music 2025</h3>
-      <p class="resource-desc">Streaming economics, DIY distribution trends, sync opportunities, and where the money is actually going in today's music industry.</p>
-      <a class="resource-link" href="javascript:void(0)">Download Free</a>
-    </div>
-  </div>
-</section>
-
-<!-- LEAD MAGNET MODAL -->
-
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <div id="modalForm">
-      <h3 class="modal-title" id="modalTitle">Download Free Guide</h3>
-      <p class="modal-sub" id="modalSub">Enter your name and email to get instant access.</p>
-      <div class="modal-field">
-        <label>First Name</label>
-        <input type="text" id="modalName" placeholder="Your name" />
-      </div>
-      <div class="modal-field">
-        <label>Email Address</label>
-        <input type="email" id="modalEmail" placeholder="your@email.com" />
-      </div>
-      <div class="modal-field">
-        <label>I am a...</label>
-        <select id="modalRole" style="width:100%;background:var(--dark3);border:1px solid rgba(201,168,76,0.2);color:var(--white);padding:14px 18px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;cursor:none;-webkit-appearance:none;">
-          <option value="">Select one</option>
-          <option value="indie">Independent Artist</option>
-          <option value="label">Record Label / A&R</option>
-          <option value="manager">Manager / Agent</option>
-          <option value="studio">Studio Owner</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <button class="modal-submit" onclick="submitModal()">Get Free Access →</button>
-    </div>
-    <div class="modal-success" id="modalSuccess">
-      <div class="check">✓</div>
-      <h3>You're in.</h3>
-      <p>Check your inbox — your download is on its way. While you're here, book a free 20-minute strategy call to discuss your specific situation.</p>
-      <a href="#contact" class="btn-primary" style="margin-top:24px;display:block;text-align:center;" onclick="closeModal()">Book a Free Call</a>
-    </div>
-  </div>
-</div>
-
-<!-- GLOSSARY -->
-
-<section id="glossary">
-  <div class="glossary-wrap">
-    <div class="reveal">
-      <p class="section-label">Industry Knowledge</p>
-      <h2 class="section-title">Music Industry<br><em>Glossary</em></h2>
-      <p style="font-size:14px;color:var(--muted);max-width:480px;margin-top:16px;line-height:1.8;">
-        Demystifying the terms the industry uses — and sometimes weaponizes — against artists who don't know better.
-      </p>
-    </div>
-    <div class="glossary-search-wrap">
-      <span class="glossary-search-icon">⌕</span>
-      <input class="glossary-search" type="text" placeholder="Search terms, e.g. 360 deal, PRO, sync..." oninput="filterGlossary(this.value)" />
-    </div>
-    <div class="glossary-filter">
-      <button class="filter-btn active" onclick="filterCat('all', this)">All</button>
-      <button class="filter-btn" onclick="filterCat('contracts', this)">Contracts</button>
-      <button class="filter-btn" onclick="filterCat('royalties', this)">Royalties</button>
-      <button class="filter-btn" onclick="filterCat('distribution', this)">Distribution</button>
-      <button class="filter-btn" onclick="filterCat('sync', this)">Sync</button>
-      <button class="filter-btn" onclick="filterCat('labels', this)">Labels</button>
-    </div>
-    <div class="glossary-grid" id="glossaryGrid"></div>
-  </div>
-</section>
-
-<!-- STUDIOS -->
 
 <section id="studios">
-  <div class="studios-wrap">
+  <div class="studios-grid">
     <div class="reveal">
       <p class="section-label">Proof of Competence</p>
       <h2 class="section-title">Six Studios.<br><em>Two Coasts. One Standard.</em></h2>
-      <p style="font-size:14px;color:var(--muted);max-width:560px;margin-top:16px;line-height:1.8;">
+      <p style="font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:30px;max-width:500px;">
         From the heart of Texas to Downtown LA and Palm Springs, I've designed and built recording facilities that balance sonic precision with creative atmosphere.
       </p>
     </div>
-    <div class="studios-grid">
-      <div class="studio-card reveal">
-        <p class="studio-loc">Los Angeles, CA</p>
-        <h3 class="studio-name">HAVEN RECORDING</h3>
-        <p class="studio-desc">Downtown LA's premier independent recording facility. Listed in the LA Times' Top 32 Studios in Southern California. A full-service environment built for both technical precision and creative freedom.</p>
-        <a href="https://themasterofmusic.com/Havenrecording/" target="_blank" class="studio-link">Visit Haven Recording →</a>
-      </div>
-      <div class="studio-card reveal">
-        <p class="studio-loc">Palm Springs, CA</p>
-        <h3 class="studio-name">STUDIO TEN</h3>
-        <p class="studio-desc">Venue Ten's world-class recording facility in Palm Springs. Designed and built from the ground up with state-of-the-art acoustics and an analog warmth that digital-only studios can't replicate.</p>
-        <a href="https://venueten.com/recording-studio/" target="_blank" class="studio-link">Visit Studio Ten →</a>
+    <div class="reveal">
+      <div class="studios-grid">
+        <div class="studio-card reveal">
+          <p class="studio-loc">Los Angeles, CA</p>
+          <h3 class="studio-name">Haven Recording</h3>
+          <p class="studio-desc">Premier independent facility. Listed in the LA Times' Top 32 Studios in SoCal.</p>
+          <a href="https://themasterofmusic.com/Havenrecording/" target="_blank" class="studio-link">Visit Haven Recording</a>
+        </div>
+        <div class="studio-card reveal">
+          <p class="studio-loc">Palm Springs, CA</p>
+          <h3 class="studio-name">Studio Ten</h3>
+          <p class="studio-desc">Venue Ten's state-of-the-art facility. Designed for analog warmth and acoustic perfection.</p>
+          <a href="https://venueten.com/recording-studio/" target="_blank" class="studio-link">Visit Studio Ten</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- INSIGHTS / BLOG -->
 
 <section id="insights">
-  <div class="insights-header reveal">
-    <div>
-      <p class="section-label">Knowledge & Insights</p>
-      <h2 class="section-title">Industry Intel,<br><em>Unfiltered.</em></h2>
-    </div>
-    <a href="#contact" class="btn-outline">Subscribe to Newsletter →</a>
+  <div class="reveal" style="text-align: center; margin-bottom: 80px;">
+    <p class="section-label" style="justify-content: center;">Knowledge Base</p>
+    <h2 class="section-title">Industry Intel,<br><em>Unfiltered.</em></h2>
   </div>
   <div class="insights-grid reveal">
-    <div class="insight-featured">
-      <span class="insight-tag label-strategy">Strategy</span>
-      <h3 class="insight-title">Why Independent Artists Keep Leaving Royalty Money Uncollected — And How to Fix It in 30 Days</h3>
-      <p class="insight-excerpt">Most independent artists are registered with one PRO and think that covers them. It doesn't. There are mechanical royalties, performance royalties, neighboring rights, and SoundExchange — and most indie artists collect less than half of what they're owed. Here's the complete registration checklist.</p>
-      <span class="insight-meta">Music Business · 8 min read</span>
-      <a href="#contact" class="insight-link">Read Full Article</a>
+    <div class="insight-card insight-featured">
+      <div>
+        <span class="insight-tag">Strategy</span>
+        <h3 class="insight-title">Why Indie Artists Left Royalty Money Uncollected — and How to Fix it.</h3>
+        <p class="insight-excerpt">Most independent artists register with only one PRO. This is a mistake. There's mechanicals, SoundExchange, and neighborings. Here's your complete collection checklist.</p>
+      </div>
+      <div>
+        <span class="insight-meta">Music Business · 8 min read</span>
+        <a href="#contact" class="insight-link">Read Full Article</a>
+      </div>
     </div>
-    <div class="insights-side">
-      <div class="insight-card">
-        <span class="insight-tag label-indie">Indie Artists</span>
-        <h4 class="insight-title-sm">The Release Strategy That Gets Playlists Without a Label</h4>
-        <p style="font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:12px;">Timing, metadata, and pre-save strategy — the three variables that actually matter to Spotify's algorithm.</p>
-        <span class="insight-meta">Release Strategy · 5 min read</span>
-      </div>
-      <div class="insight-card">
-        <span class="insight-tag label-strategy">Labels</span>
-        <h4 class="insight-title-sm">What A&R Reps Actually Look At Before They Listen to a Single Note</h4>
-        <p style="font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:12px;">Your DSP profile, social consistency, and audience data tell a story before your music does. Here's how to make it the right story.</p>
-        <span class="insight-meta">Label Strategy · 6 min read</span>
-      </div>
-      <div class="insight-card">
-        <span class="insight-tag label-studio">Studio</span>
-        <h4 class="insight-title-sm">The $10,000 Acoustic Mistake Most Home Studio Builds Make</h4>
-        <p style="font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:12px;">Room treatment before gear — always. The order of operations for a studio build that sounds professional from day one.</p>
-        <span class="insight-meta">Studio Design · 4 min read</span>
-      </div>
+    <div class="insight-card">
+      <span class="insight-tag">Indie Artists</span>
+      <h3 class="insight-title" style="font-size:18px;">The Release Strategy that Gets Playlists.</h3>
+      <p class="insight-excerpt" style="font-size:13px;line-height:1.6;margin-bottom:12px;">Algorithms value three things: metadata, timing, and consistency.</p>
+      <span class="insight-meta">Release Strategy · 5 min read</span>
+    </div>
+    <div class="insight-card">
+      <span class="insight-tag">Labels</span>
+      <h3 class="insight-title" style="font-size:18px;">What A&R Reps Really Look at Before They Listen.</h3>
+      <p class="insight-excerpt" style="font-size:13px;line-height:1.6;margin-bottom:12px;">Your DSP profile and audience data tell a story. Make sure it's the right one.</p>
+      <span class="insight-meta">Label Strategy · 6 min read</span>
     </div>
   </div>
 </section>
-
-<!-- TESTIMONIALS -->
-
-<section id="testimonials">
-  <div class="testimonials-wrap">
-    <div class="reveal">
-      <p class="section-label">Client Feedback</p>
-      <h2 class="section-title">What Artists &<br><em>Labels Say</em></h2>
-    </div>
-    <div class="testimonials-slider">
-      <div class="testimonial-card">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">Garrett helped me understand the business side of my music career in a way no one had before. I was leaving thousands of dollars in royalties on the table every year and didn't even know it.</p>
-        <p class="testimonial-author">Independent Artist — R&B/Soul</p>
-        <p class="testimonial-role">Los Angeles, CA</p>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">The studio build consultation saved us from a $40,000 acoustic nightmare. Garrett knew exactly what we were doing wrong before we'd even finished describing the space.</p>
-        <p class="testimonial-author">Studio Owner — Independent Label</p>
-        <p class="testimonial-role">Austin, TX</p>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">I came in with a 360 deal offer I thought was good. Garrett walked me through every clause. I walked away with a significantly better negotiating position — and a counter-offer that they accepted.</p>
-        <p class="testimonial-author">Singer-Songwriter</p>
-        <p class="testimonial-role">Nashville, TN</p>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">Our sync revenue doubled in six months after working with Garrett on our licensing strategy. He knows this world from the inside out — both the creative and the business side.</p>
-        <p class="testimonial-author">Music Supervisor — Film & TV</p>
-        <p class="testimonial-role">Hollywood, CA</p>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">As a label, we needed someone who speaks both artist and business. Garrett does both fluently. Our A&R strategy is tighter, our roster decisions are smarter, and we're signing artists with more leverage.</p>
-        <p class="testimonial-author">A&R Director — Independent Label</p>
-        <p class="testimonial-role">New York, NY</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMMUNITY / NEWSLETTER + WEBINARS -->
-
-<section id="community">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="reveal">
-      <p class="section-label">Stay Connected</p>
-      <h2 class="section-title">Learn. Grow.<br><em>Stay Informed.</em></h2>
-    </div>
-  </div>
-  <div class="community-grid">
-    <div class="community-card reveal">
-      <span class="community-card-icon">📬</span>
-      <h3 class="community-card-title">The Industry Briefing</h3>
-      <p class="community-card-desc">A biweekly breakdown of music industry news, royalty changes, sync opportunities, and strategy insights — written for artists and label professionals who want to stay ahead.</p>
-      <div class="newsletter-form">
-        <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="your@email.com" />
-        <button class="newsletter-btn" onclick="subscribeNewsletter()">Subscribe</button>
-      </div>
-      <p style="font-size:11px;color:var(--muted);margin-top:12px;">No spam. Unsubscribe anytime. Join 2,000+ music professionals.</p>
-    </div>
-    <div class="community-card reveal">
-      <span class="community-card-icon">🎙️</span>
-      <h3 class="community-card-title">Free Live Webinars</h3>
-      <p class="community-card-desc">Monthly deep-dives on the business of music. Ask questions live. Walk away with actionable strategies — free for everyone.</p>
-      <div class="webinar-upcoming">
-        <div class="webinar-date">
-          <div class="webinar-month">APR</div>
-          <div class="webinar-day">15</div>
-        </div>
-        <div>
-          <p class="webinar-info-title">Royalties 101: Stop Leaving Money on the Table</p>
-          <p class="webinar-info-desc">PROs, mechanical, SoundExchange & sync — explained live</p>
-        </div>
-        <a href="#contact" class="webinar-register">Register →</a>
-      </div>
-      <div class="webinar-upcoming">
-        <div class="webinar-date">
-          <div class="webinar-month">MAY</div>
-          <div class="webinar-day">8</div>
-        </div>
-        <div>
-          <p class="webinar-info-title">How to Build a Fanbase Without a Label in 2025</p>
-          <p class="webinar-info-desc">Algorithms, release strategy, and community building</p>
-        </div>
-        <a href="#contact" class="webinar-register">Register →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
 
 <section id="pricing">
-  <div class="pricing-wrap">
-    <div class="reveal" style="text-align:center;">
-      <p class="section-label" style="justify-content:center;">Transparent Pricing</p>
-      <h2 class="section-title">Investment in<br><em>Your Career</em></h2>
-      <p style="font-size:14px;color:var(--muted);max-width:480px;margin:16px auto 0;line-height:1.8;">
-        No hidden fees. No vague retainers. Choose the engagement that fits where you are right now.
+  <div class="pricing-wrapper">
+    <div class="reveal" style="text-align: center;">
+      <p class="section-label" style="justify-content: center;">Transparent Pricing</p>
+      <h2 class="section-title">Invest in<br><em>Your Career</em></h2>
+      <p style="font-size:14px;color:var(--text-muted);max-width:480px;margin:16px auto 0;line-height:1.8;">
+        Vetted expertise, no vague retainers. Choose the strategic support that fits your current needs.
       </p>
     </div>
-    <div class="pricing-toggle reveal">
-      <button class="toggle-btn active" onclick="setPricingMode('artist', this)">Independent Artist</button>
-      <button class="toggle-btn" onclick="setPricingMode('label', this)">Record Label</button>
+    <div class="pricing-toggle-wrap reveal">
+      <div class="pricing-toggle">
+        <button class="pricing-toggle-btn active" id="btnArtist" onclick="setPricingMode('artist')">Independent Artist</button>
+        <button class="pricing-toggle-btn" id="btnLabel" onclick="setPricingMode('label')">Record Label</button>
+      </div>
     </div>
-    <div class="pricing-grid" id="pricingGrid">
-      <!-- Populated by JS -->
-    </div>
+    <div class="pricing-grid reveal" id="pricingGrid">
+      </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-
 <section id="contact">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="reveal">
-      <p class="section-label">Get in Touch</p>
-      <h2 class="section-title">Ready to Build<br><em>Your Infrastructure?</em></h2>
-    </div>
-  </div>
   <div class="contact-grid">
     <div class="reveal">
-      <div class="contact-info-item">
-        <p class="contact-info-label">Email</p>
-        <a href="/cdn-cgi/l/email-protection#7b1c1a09091e0f0f3b161a080f1e09141d160e08121812151f0e080f090255181416" class="contact-info-val"><span class="__cf_email__" data-cfemail="88efe9fafaedfcfcc8e5e9fbfcedfae7eee5fdfbe1ebe1e6ecfdfbfcfaf1a6ebe7e5">[email&#160;protected]</span></a>
-      </div>
-      <div class="contact-info-item">
-        <p class="contact-info-label">Instagram</p>
-        <a href="https://instagram.com/MasterofMusicIndustry" target="_blank" class="contact-info-val">@MasterofMusicIndustry</a>
-      </div>
-      <div class="contact-info-item">
-        <p class="contact-info-label">Location</p>
-        <span class="contact-info-val" style="color:var(--muted);">Los Angeles, CA</span>
-      </div>
-      <div class="contact-info-item">
-        <p class="contact-info-label">Free Discovery Call</p>
-        <p style="font-size:13px;color:var(--muted);line-height:1.8;">Book a free 20-minute strategy call to discuss your situation. No pitch, no pressure — just an honest conversation about what's possible.</p>
-        <a href="#contact" class="btn-primary" style="margin-top:20px;display:inline-block;">Book Your Free Call →</a>
+      <div class="contact-info-list">
+        <div class="contact-info-item">
+          <p class="info-label">Email</p>
+          <a href="/cdn-cgi/l/email-protection#ff8c8f8a9e8d9099928a8c969c96919b8a8c8b8d86d19c9092" class="info-val"><span class="__cf_email__" data-cfemail="6c1f1c190d1e030a01191f050f050208191f181e15420f0301">[email&#160;protected]</span></a>
+        </div>
+        <div class="contact-info-item">
+          <p class="info-label">Instagram</p>
+          <a href="https://instagram.com/MasterofMusicIndustry" target="_blank" class="info-val">@MasterofMusicIndustry</a>
+        </div>
+        <div class="contact-info-item">
+          <p class="info-label">Location</p>
+          <span class="info-val">Los Angeles, CA</span>
+        </div>
       </div>
     </div>
     <div class="reveal">
-      <form class="contact-form" onsubmit="submitContact(event)">
-        <div class="contact-row">
+      <div class="contact-form-panel">
+        <h3>Submit Your Inquiry</h3>
+        <form class="contact-form" onsubmit="submitForm(event)">
           <div class="contact-field">
             <label>First Name</label>
             <input type="text" placeholder="First name" required />
@@ -2126,153 +702,136 @@ footer { padding: 60px 30px 30px; }
             <label>Last Name</label>
             <input type="text" placeholder="Last name" required />
           </div>
-        </div>
-        <div class="contact-field">
-          <label>Email Address</label>
-          <input type="email" placeholder="your@email.com" required />
-        </div>
-        <div class="contact-field">
-          <label>I am a...</label>
-          <select required>
-            <option value="">Select one</option>
-            <option>Independent Artist</option>
-            <option>Record Label / A&R</option>
-            <option>Manager / Agent</option>
-            <option>Studio Owner</option>
-            <option>Producer / Engineer</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="contact-field">
-          <label>What Do You Need Help With?</label>
-          <select required>
-            <option value="">Select area</option>
-            <option>Business Strategy & Release Planning</option>
-            <option>Royalty Registration & Collection</option>
-            <option>Contract Negotiation & Review</option>
-            <option>Sync Licensing</option>
-            <option>Studio Design & Build</option>
-            <option>A&R / Artist Development</option>
-            <option>Live Events & Production</option>
-            <option>General Consultation</option>
-          </select>
-        </div>
-        <div class="contact-field">
-          <label>Tell Me About Your Situation</label>
-          <textarea rows="5" placeholder="Give me a brief overview of where you are and what you're trying to achieve..."></textarea>
-        </div>
-        <button type="submit" class="btn-primary" style="border:none;width:100%;font-family:'DM Sans',sans-serif;cursor:none;">Send Message →</button>
-      </form>
+          <div class="contact-field full">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" required />
+          </div>
+          <div class="contact-field full">
+            <label>I am a...</label>
+            <select required>
+              <option value="">Select one</option>
+              <option>Independent Artist</option>
+              <option>Record Label / A&R</option>
+              <option>Manager / Agent</option>
+              <option>Studio Owner</option>
+              <option>Producer / Engineer</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="contact-field full">
+            <label>What Do You Need Help With?</label>
+            <select required>
+              <option value="">Select area</option>
+              <option>Business Strategy & Release Planning</option>
+              <option>Royalty Registration & Collection</option>
+              <option>Contract Negotiation Support</option>
+              <option>Sync Licensing Strategy</option>
+              <option>Studio Design & Build</option>
+              <option>A&R / Artist Development</option>
+              <option>General Consultation</option>
+            </select>
+          </div>
+          <div class="contact-field full">
+            <label>Tell Me About Your Situation</label>
+            <textarea rows="5" placeholder="A brief overview of where you are and your goals..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Inquiry</button>
+        </form>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-
 <footer>
   <div class="footer-grid">
     <div>
-      <span class="footer-brand-logo">Master of Music Industry</span>
-      <p class="footer-brand-desc">25 years in production. 20 years in business. Building the infrastructure that turns creative vision into lasting careers — for independent artists and labels alike.</p>
-      <div class="footer-social">
-        <a href="https://instagram.com/MasterofMusicIndustry" target="_blank" title="Instagram">IG</a>
-        <a href="/cdn-cgi/l/email-protection#d1b6b0a3a3b4a5a591bcb0a2a5b4a3beb7bca4a2b8b2b8bfb5a4a2a5a3a8ffb2bebc" title="Email">✉</a>
-        <a href="https://themasterofmusic.com" title="Website">🌐</a>
+      <div class="footer-brand">
+        <img src="image_0.png" alt="Master of Music Industry Logo" class="footer-logo-img">
+        <span class="footer-logo-text">Master <span>of</span> Music Industry</span>
       </div>
+      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.8; max-width: 400px; margin-bottom: 2rem;">
+        Building the infrastructure that turns creative vision into lasting careers. LOS ANGELES — PALM SPRINGS.
+      </p>
+      <a href="https://instagram.com/MasterofMusicIndustry" target="_blank" style="color: var(--text-main); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600;">Follow on IG</a>
     </div>
     <div>
-      <p class="footer-col-title">Services</p>
+      <p style="font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--red-metallic); margin-bottom: 2rem;">Expertise</p>
       <ul class="footer-links">
-        <li><a href="#services">Business & Strategy</a></li>
-        <li><a href="#services">Studio Architecture</a></li>
-        <li><a href="#services">Production & Events</a></li>
-        <li><a href="#services">Sync Licensing</a></li>
-        <li><a href="#services">A&R Consulting</a></li>
-        <li>Automated Analog Client Correspondence (via Cricut Maker 3)</li>
-
+        <li><a href="#services">Consulting</a></li>
+        <li><a href="#services">Studio Design</a></li>
+        <li><a href="#calculator">Interactive Tool</a></li>
+        <li><a href="#insights">Insights</a></li>
       </ul>
     </div>
     <div>
-      <p class="footer-col-title">Resources</p>
+      <p style="font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--red-metallic); margin-bottom: 2rem;">Quick Links</p>
       <ul class="footer-links">
-        <li><a href="#resources">Free Downloads</a></li>
-        <li><a href="#glossary">Industry Glossary</a></li>
-        <li><a href="#insights">Insights & Blog</a></li>
-        <li><a href="#community">Newsletter</a></li>
-        <li><a href="#community">Free Webinars</a></li>
+        <li><a href="#about">About Garrett</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <div>
-      <p class="footer-col-title">Studios</p>
+      <p style="font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--red-metallic); margin-bottom: 2rem;">Locations</p>
       <ul class="footer-links">
-        <li><a href="https://themasterofmusic.com/Havenrecording/" target="_blank">Haven Recording — LA</a></li>
-        <li><a href="https://venueten.com/recording-studio/" target="_blank">Studio Ten — Palm Springs</a></li>
-        <li><a href="#studios">Studio Design Services</a></li>
-        <li><a href="#contact">Book Studio Consult</a></li>
+        <li>Haven Recording — LA</li>
+        <li>Studio Ten — Palm Springs</li>
+        <li>T.E.N. Palm Springs</li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 The Master of Music Industry. All Rights Reserved. Los Angeles, CA</span>
+    <span>© 2026 The Master of Music Industry. Los Angeles, CA. <span class="footer-star">✧</span></span>
     <span>Built for artists who mean business.</span>
   </div>
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-
-// CURSOR
+// CURSOR LOGIC
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
+
 document.addEventListener('mousemove', e => {
 mx = e.clientX; my = e.clientY;
 cursor.style.left = mx + 'px';
 cursor.style.top = my + 'px';
 });
+
 function animateRing() {
-rx += (mx - rx) * 0.12;
-ry += (my - ry) * 0.12;
+rx += (mx - rx) * 0.15;
+ry += (my - ry) * 0.15;
 ring.style.left = rx + 'px';
 ring.style.top = ry + 'px';
 requestAnimationFrame(animateRing);
 }
 animateRing();
-document.querySelectorAll('a, button, input, select, textarea, .resource-card, .service-card, .glossary-item').forEach(el => {
+
+document.querySelectorAll('a, button, input, select, textarea, .service-card, .studio-card').forEach(el => {
 el.addEventListener('mouseenter', () => {
-cursor.style.width = '20px';
-cursor.style.height = '20px';
-ring.style.width = '60px';
-ring.style.height = '60px';
-ring.style.opacity = '0.8';
+cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+ring.style.transform = 'translate(-50%, -50%) scale(1.5)';
+ring.style.borderColor = 'var(--text-main)';
 });
 el.addEventListener('mouseleave', () => {
-cursor.style.width = '12px';
-cursor.style.height = '12px';
-ring.style.width = '36px';
-ring.style.height = '36px';
-ring.style.opacity = '0.5';
+cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+ring.style.transform = 'translate(-50%, -50%) scale(1)';
+ring.style.borderColor = 'var(--red-accent)';
 });
 });
 
 // NAV SCROLL
 window.addEventListener('scroll', () => {
-document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
 });
-
-// MOBILE NAV
-function toggleMobileNav() {
-document.getElementById('mobileNav').classList.toggle('open');
-}
-function closeMobileNav() {
-document.getElementById('mobileNav').classList.remove('open');
-}
 
 // SCROLL REVEAL
 const reveals = document.querySelectorAll('.reveal');
 const ro = new IntersectionObserver(entries => {
 entries.forEach((e, i) => {
 if (e.isIntersecting) {
-setTimeout(() => e.target.classList.add('visible'), i * 60);
+setTimeout(() => e.target.classList.add('visible'), i * 100);
+ro.unobserve(e.target);
 }
 });
 }, { threshold: 0.1 });
@@ -2280,7 +839,6 @@ reveals.forEach(r => ro.observe(r));
 
 // ROI CALCULATOR
 function fmtCurrency(n) {
-if (n >= 1000) return '$' + (n/1000).toFixed(1) + 'K';
 return '$' + Math.round(n).toLocaleString();
 }
 function calcROI() {
@@ -2289,17 +847,11 @@ const merch = parseFloat(document.getElementById('calcMerch').value) || 0;
 const live = parseFloat(document.getElementById('calcLive').value) || 0;
 const noPRO = document.getElementById('calcPRO').value === 'no';
 const noSync = document.getElementById('calcSync').value === 'no';
-const stage = document.getElementById('calcStage').value;
 
 const streamRev = streams * 0.004;
 const totalMerch = merch + live;
-const royaltyGap = noPRO ? streams * 0.003 : streams * 0.0005;
-let syncPotential = 0;
-if (noSync) {
-if (stage === 'emerging') syncPotential = 300;
-else if (stage === 'growing') syncPotential = 1500;
-else syncPotential = 5000;
-}
+const royaltyGap = noPRO ? streams * 0.003 : streams * 0.001;
+const syncPotential = noSync ? streams * 0.0005 : streams * 0.0001;
 const gap = royaltyGap + syncPotential;
 
 document.getElementById('resStreaming').textContent = fmtCurrency(streamRev);
@@ -2309,98 +861,40 @@ document.getElementById('resSync').textContent = fmtCurrency(syncPotential) + '/
 document.getElementById('resTotal').textContent = fmtCurrency(gap * 12) + '/yr';
 }
 
-// MODAL
-function openModal(title, sub) {
-document.getElementById('modalTitle').textContent = title;
-document.getElementById('modalSub').textContent = sub;
-document.getElementById('modalOverlay').classList.add('active');
-document.getElementById('modalForm').style.display = 'block';
-document.getElementById('modalSuccess').style.display = 'none';
-}
-function closeModal() {
-document.getElementById('modalOverlay').classList.remove('active');
-}
-function submitModal() {
-const name = document.getElementById('modalName').value;
-const email = document.getElementById('modalEmail').value;
-if (!name || !email) { alert('Please fill in your name and email.'); return; }
-document.getElementById('modalForm').style.display = 'none';
-document.getElementById('modalSuccess').style.display = 'block';
-}
-document.getElementById('modalOverlay').addEventListener('click', function(e) {
-if (e.target === this) closeModal();
-});
-
-// GLOSSARY
-const glossaryData = [
-{ term: '360 Deal', cat: 'contracts', def: "A record contract where the label takes a percentage of all revenue streams — not just recorded music, but touring, merch, endorsements, and more. Often presented as standard. It's negotiable." },
-{ term: 'PRO (Performing Rights Organization)', cat: 'royalties', def: 'Organizations like ASCAP, BMI, or SESAC that collect performance royalties on behalf of songwriters and publishers. You must register your songs and join one.' },
-{ term: 'SoundExchange', cat: 'royalties', def: 'A non-profit that collects digital performance royalties for sound recordings — separate from the songwriter royalties collected by PROs. Covers Pandora, SiriusXM, webcasts, and more.' },
-{ term: 'Mechanical Royalties', cat: 'royalties', def: 'Royalties paid to songwriters when their compositions are reproduced — whether on a physical record, digital download, or as a stream. Collected by Harry Fox Agency or directly through distributors.' },
-{ term: 'Sync License', cat: 'sync', def: 'A license granting permission to use a piece of music in sync with visual media — TV, film, advertising, or video games. One of the most lucrative revenue streams for independent artists.' },
-{ term: 'Master Rights', cat: 'contracts', def: "Ownership of the actual sound recording. Whoever owns the master controls how it's used and licensed. Artists often sign master rights away in record deals — understanding this is critical." },
-{ term: 'Publishing Rights', cat: 'contracts', def: "Rights to the underlying composition — the melody and lyrics. Separate from master rights. Publishing deals can be highly lucrative, but signing them away has long-term consequences." },
-{ term: 'DSP', cat: 'distribution', def: 'Digital Service Provider — any platform that streams or sells digital music (Spotify, Apple Music, Amazon Music, Tidal, etc.). Each has different royalty structures and algorithmic mechanics.' },
-{ term: 'A&R', cat: 'labels', def: 'Artists & Repertoire — the department at a record label responsible for scouting, signing, and developing talent. A&R reps are the gatekeepers and advocates for artists within a label.' },
-{ term: 'Artist Development', cat: 'labels', def: "The process of shaping an artist's identity, sound, image, and market positioning before or after signing. Historically done by labels — increasingly done by independent consultants." },
-{ term: 'Neighboring Rights', cat: 'royalties', def: 'Performance royalties for the sound recording (not the composition) when music is broadcast. Common in Europe and Canada; often entirely uncollected by U.S. artists without representation.' },
-{ term: 'Distributor', cat: 'distribution', def: "A company that gets your music onto DSPs and into stores. Independent distributors (DistroKid, TuneCore, AWAL) have democratized distribution — but they're not all equal in royalty terms." },
-{ term: 'Work-for-Hire', cat: 'contracts', def: 'A contractual arrangement where all creative work belongs to the employer, not the creator. Common in session work and sync composition. Means you sign away all future royalty claims.' },
-{ term: 'Advance', cat: 'labels', def: "An upfront payment from a label that must be recouped from your future royalties before you see another cent. Not free money — it's a loan against your future earnings." },
-{ term: 'Recoupment', cat: 'labels', def: 'The process by which a label recoups its advance and costs from your royalty earnings before paying you. Artists can sell millions of records and never see a royalty check due to recoupment clauses.' },
-{ term: 'Metadata', cat: 'distribution', def: 'The data attached to your music files — ISRC codes, ISWC codes, performer credits, composer info, genre tags. Incorrect or missing metadata is one of the most common reasons royalties go uncollected.' },
-];
-let currentCat = 'all';
-let currentSearch = '';
-function renderGlossary() {
-const grid = document.getElementById('glossaryGrid');
-const filtered = glossaryData.filter(item => {
-const catMatch = currentCat === 'all' || item.cat === currentCat;
-const searchMatch = !currentSearch || item.term.toLowerCase().includes(currentSearch.toLowerCase()) || item.def.toLowerCase().includes(currentSearch.toLowerCase());
-return catMatch && searchMatch;
-});
-grid.innerHTML = filtered.length === 0
-? '<div style="padding:40px;color:var(--muted);font-size:13px;grid-column:1/-1;">No terms found for that search.</div>'
-: filtered.map(item => ` <div class="glossary-item"> <div class="glossary-term">${item.term} <span class="glossary-cat">${item.cat}</span></div> <p class="glossary-def">${item.def}</p> </div>`).join('');
-}
-function filterGlossary(val) { currentSearch = val; renderGlossary(); }
-function filterCat(cat, btn) {
-currentCat = cat;
-document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-btn.classList.add('active');
-renderGlossary();
-}
-renderGlossary();
-
 // PRICING
 const pricingData = {
 artist: [
-{ tier: 'Starter', name: 'Foundation Session', price: '297', cadence: 'one-time', features: ['90-minute strategy session', 'PRO & royalty registration audit', 'Release strategy overview', 'Career roadmap document', 'Email follow-up Q&A (7 days)'] },
-{ tier: 'Growth', name: 'Career Blueprint', price: '897', cadence: 'one-time', featured: true, features: ['3 x 60-minute consulting sessions', 'Full royalty registration setup', 'Release strategy & scheduling', 'Distribution platform review', 'Contract review (up to 2 documents)', 'Sync licensing introductory strategy', '30-day email support'] },
-{ tier: 'Complete', name: 'Full Infrastructure', price: '2,497', cadence: 'per quarter', features: ['Monthly strategy sessions (ongoing)', 'Full business audit & rebuild', 'Contract negotiation support', 'Sync licensing strategy & pitching', 'Label outreach & A&R prep', 'Studio workflow optimization', 'Priority access & direct line'] },
+{ tier: 'Foundation', name: 'Starter Session', price: '297', features: ['90-minute strategy call', 'PRO & royalty audit', 'Career roadmap document', 'Follow-up summary'] },
+{ tier: 'Strategic', name: 'Career Blueprint', price: '997', featured: true, features: ['4 x 60-minute consulting calls', 'Full royalty setup framework', 'Release strategy mapping', 'Contract review (2 documents)', '30-day email support'] },
+{ tier: 'Complete', name: 'Full Partner', price: '2,997', features: ['Ongoing quarterly partnership', 'Weekly check-in calls', 'Direct contract negotiation', 'Sync pitching support', 'Studio design consultation'] },
 ],
 label: [
-{ tier: 'Starter', name: 'Label Strategy Session', price: '497', cadence: 'one-time', features: ['120-minute A&R strategy session', 'Roster audit & feedback', 'Market positioning analysis', 'Release strategy consultation', 'Follow-up summary document'] },
-{ tier: 'Partner', name: 'Label Development', price: '1,997', cadence: 'one-time', featured: true, features: ['4 x consulting sessions', 'Full A&R strategy development', 'Artist development frameworks', 'Contract structure review', 'Sync licensing integration', 'Studio infrastructure planning', '60-day support access'] },
-{ tier: 'Retained', name: 'Label Partner', price: '4,500', cadence: 'per month', features: ['Ongoing strategic partnership', 'Weekly check-in calls', 'Full contract review & negotiation', 'Sync & licensing strategy execution', 'Studio design consultation', 'Staff training sessions', 'Direct line access, always'] },
+{ tier: 'Strategic', name: 'A&R Consulting', price: '497', features: ['120-minute strategy call', 'Roster audit & feedback', 'Release scheduling advice', 'Market positioning analysis'] },
+{ tier: 'Partner', name: 'Development Pack', price: '2,497', featured: true, features: ['6 x strategy calls', 'Full A&R framework design', 'Artist development strategies', 'Sync & licensing plan', '60-day support'] },
+{ tier: 'Retained', name: 'Label Partner', price: '4,500', features: ['Ongoing retained partnership', 'Staff training sessions', 'Contract framework design', 'Direct A&R consulting', 'Weekly check-ins'] },
 ]
 };
+
 function renderPricing(mode) {
 const grid = document.getElementById('pricingGrid');
-grid.innerHTML = pricingData[mode].map(p => `<div class="pricing-card ${p.featured ? 'featured' : ''}"> <p class="pricing-tier">${p.tier}</p> <h3 class="pricing-name">${p.name}</h3> <div class="pricing-price"><span>$</span>${p.price}</div> <p class="pricing-cadence">${p.cadence}</p> <ul class="pricing-features"> ${p.features.map(f =>`<li>${f}</li>`).join('')} </ul> <a href="#contact" class="btn-${p.featured ? 'primary' : 'outline'}" style="display:block;text-align:center;width:100%;">Get Started →</a> </div>`).join('');
+grid.innerHTML = pricingData[mode].map(p => ` <div class="pricing-card ${p.featured ? 'featured' : ''}"> ${p.featured ? '<span class="featured-label">Popular Choice</span>' : ''} <p class="pricing-tier">${p.tier}</p> <h3 class="pricing-name">${p.name}</h3> <div class="pricing-price"><span>$</span>${p.price}</div> <ul class="pricing-features"> ${p.features.map(f =>`<li>${f}</li>`).join('')} </ul> <a href="#contact" class="btn-${p.featured ? 'primary' : 'outline'}" style="display:block;text-align:center;width:100%;">Get Started</a> </div>`).join('');
 }
-function setPricingMode(mode, btn) {
-document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-btn.classList.add('active');
+function setPricingMode(mode) {
+document.getElementById('btnArtist').classList.toggle('active', mode === 'artist');
+document.getElementById('btnLabel').classList.toggle('active', mode === 'label');
 renderPricing(mode);
 }
 renderPricing('artist');
 
-// NEWSLETTER
+// NEWSLETTER & FORM PLACEHOLDER
 function subscribeNewsletter() {
 const email = document.getElementById('newsletterEmail').value;
 if (!email) { alert('Please enter your email address.'); return; }
 document.getElementById('newsletterEmail').value = '';
+}
+function submitForm(event) {
+event.preventDefault();
+alert('Thank you for your inquiry. Garrett will connect with you via email.');
 }
 </script>
 </body>
