@@ -1097,50 +1097,59 @@ footer { background:var(--bg-base); padding:80px 60px 40px; border-top:1px solid
     <div class="reveal">
       <div class="contact-form-panel">
         <h3>Submit Your Inquiry</h3>
-        <form class="contact-form" onsubmit="submitForm(event)">
-          <div class="contact-field">
-            <label>First Name</label>
-            <input type="text" placeholder="First name" required>
-          </div>
-          <div class="contact-field">
-            <label>Last Name</label>
-            <input type="text" placeholder="Last name" required>
-          </div>
-          <div class="contact-field full">
-            <label>Email Address</label>
-            <input type="email" placeholder="your@email.com" required>
-          </div>
-          <div class="contact-field full">
-            <label>I am a...</label>
-            <select required>
-              <option value="">Select one</option>
-              <option>Independent Artist</option>
-              <option>Record Label / A&R</option>
-              <option>Manager / Agent</option>
-              <option>Studio Owner</option>
-              <option>Producer / Engineer</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="contact-field full">
-            <label>What Do You Need Help With?</label>
-            <select required>
-              <option value="">Select area</option>
-              <option>Business Strategy & Release Planning</option>
-              <option>Royalty Registration & Collection</option>
-              <option>Contract Negotiation & Review</option>
-              <option>Sync Licensing Strategy</option>
-              <option>Studio Design & Build</option>
-              <option>A&R / Artist Development</option>
-              <option>General Consultation</option>
-            </select>
-          </div>
-          <div class="contact-field full">
-            <label>Tell Me About Your Situation</label>
-            <textarea rows="5" placeholder="A brief overview of where you are and what you're trying to achieve..."></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send Inquiry &rarr;</button>
-        </form>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+  
+  <input type="hidden" name="access_key" value="6f368e58-4efc-4472-abd4-2f78b8e70044">
+  
+  <div class="contact-field">
+    <label>First Name</label>
+    <input type="text" name="First Name" placeholder="First name" required />
+  </div>
+  
+  <div class="contact-field">
+    <label>Last Name</label>
+    <input type="text" name="Last Name" placeholder="Last name" required />
+  </div>
+  
+  <div class="contact-field full">
+    <label>Email Address</label>
+    <input type="email" name="email" placeholder="your@email.com" required />
+  </div>
+  
+  <div class="contact-field full">
+    <label>I am a...</label>
+    <select name="Role" required>
+      <option value="">Select one</option>
+      <option value="Independent Artist">Independent Artist</option>
+      <option value="Record Label / A&R">Record Label / A&R</option>
+      <option value="Manager / Agent">Manager / Agent</option>
+      <option value="Studio Owner">Studio Owner</option>
+      <option value="Producer / Engineer">Producer / Engineer</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+  
+  <div class="contact-field full">
+    <label>What Do You Need Help With?</label>
+    <select name="Service Needed" required>
+      <option value="">Select area</option>
+      <option value="Business Strategy">Business Strategy & Release Planning</option>
+      <option value="Royalty Registration">Royalty Registration & Collection</option>
+      <option value="Contract Negotiation">Contract Negotiation Support</option>
+      <option value="Sync Licensing">Sync Licensing Strategy</option>
+      <option value="Studio Design">Studio Design & Build</option>
+      <option value="A&R">A&R / Artist Development</option>
+      <option value="General Consultation">General Consultation</option>
+    </select>
+  </div>
+  
+  <div class="contact-field full">
+    <label>Tell Me About Your Situation</label>
+    <textarea name="message" rows="5" placeholder="A brief overview of where you are and your goals..." required></textarea>
+  </div>
+  
+  <button type="submit" class="submit-btn">Send Inquiry</button>
+</form>
       </div>
     </div>
   </div>
